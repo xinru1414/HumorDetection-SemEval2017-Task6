@@ -26,7 +26,7 @@ Step 5: Run `python cilantro_a.py` / `python cilantro_b.py` to generate Task A /
 Step 6: Run `python TaskA_Eval/TaskA_Eval_Script.py predict_test/ gold_test/` / `py TaskB_Eval/TaskB_Eval_Script.py predict_test/ gold_test/` to evaluate Task A / Task B result
 
 # METHOD
-The system uses language models to train the corpus. Sepeficially, the system uses KenLM Language Model Toolkit.
+The system uses language models (bigram and trigram) to train the corpus. Sepeficially, the system uses KenLM Language Model Toolkit.
 
 # REFERENCE
 SemEval:  http://alt.qcri.org/semeval2017/task6/
