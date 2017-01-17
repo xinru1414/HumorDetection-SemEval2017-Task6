@@ -1,0 +1,7 @@
+Usage:, __file__, <prediction_dir> <gold_dir>
+The files in the <prediction_dir> should be named like their corresponding data files, but with _PREDICT prior to the .tsv extension
+For example, Hahstag_File.tsv should be named Hashtag_File_PREDICT.tsv
+The files in the <prediction_dir> should be formatted as follows:
+<tweet1_id>\t<tweet2_id>\t<prediction>
+where <prediction> is 1 if the first tweets is funnier and 0 otherwise
+The files in the <gold_dir> should be files formatted as have been released in train/trail data files

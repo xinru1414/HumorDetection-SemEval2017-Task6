@@ -24,7 +24,7 @@ def listdir_nohidden(path):
 		if not f.startswith('.'):
 			yield f
 
-root_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data'
+root_path = '/Users/xinru/Developer/Thesis/src/SemEval/trial_dir/trial_data'
 
 for filename in listdir_nohidden(root_path):
 	fullpath = os.path.join(root_path, filename)

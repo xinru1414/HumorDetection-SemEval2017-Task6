@@ -11,7 +11,7 @@
 #	<not in top10 tweet_id>
 #	...
 #	<not in top10 tweet_id>
-#	
+
 # Language: Python 2.7
 # Command line example:
 #	python cilantro_b.py
@@ -33,7 +33,7 @@ def listdir_nohidden(path):
 			yield f
 
 # input file folder. Change the path to your own path
-root_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data_result'
+root_path = '/Users/xinru/Developer/Thesis/src/SemEval/trial_dir/trial_data_result'
 
 
 for filename in listdir_nohidden(root_path):
