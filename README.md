@@ -11,9 +11,31 @@ For Subtask A, the system should be able to correctly predict which tweet is fun
 # HOW TO RUN THE SYSTEM
 The system is written in Python 2.7
 
-Step 1: Download the training data from the SemEval website (http://alt.qcri.org/semeval2017/task6/)
+You can download the training data and Evaluation script from the SemEval website (http://alt.qcri.org/semeval2017/task6/)
 
-Step 2: Run install.sh for dependencies (kenlm)
+Step 1: Run `pip install https://github.com/kpu/kenlm/archive/master.zip` to install kenlm
 
-Step 3: Run `python avocado.py` to generate
+Step 2: Run `python avocado.py` to generate training corpus (plain txt file which contains tweets) for the language model
+
+Step 3: Under kenlm directory Run `/build/bin/lmplz -o 3 -S 70% </path/to/the/plain/text/file/plain.txt >text.arpa` to train the language model (specific usage refers to KenLM: https://kheafield.com/code/kenlm/)
+
+Step 4: Run `python beets.py` to generate scores for each tweet based on the languge model
+
+Step 5: Run `python cilantro_a.py` / `python cilantro_b.py` to generate Task A / Task B result
+
+Step 6: Run `python TaskA_Eval/TaskA_Eval_Script.py predict_test/ gold_test/` / `py TaskB_Eval/TaskB_Eval_Script.py predict_test/ gold_test/` to evaluate Task A / Task B result
+
+# METHOD
+The system uses language models to train the corpus. Sepeficially, the system uses KenLM Language Model Toolkit.
+
+# REFERENCE
+SemEval:  http://alt.qcri.org/semeval2017/task6/
+
+KenLM Language Model Toolkit:  https://github.com/kpu/kenlm
+                               http://kheafield.com/code/kenlm/
+        
+
+        
+
+
 
