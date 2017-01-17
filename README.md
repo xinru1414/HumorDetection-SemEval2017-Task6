@@ -13,4 +13,4 @@ The system is written in Python 2.7
 
 	Step 1: Download the training data from the SemEval website (http://alt.qcri.org/semeval2017/task6/)
 	Step 2: Run install.sh for dependencies (kenlm)
-	STep 3: Run python avocado.py to generate
+	STep 3: Run 'python avocado.py' to generate
