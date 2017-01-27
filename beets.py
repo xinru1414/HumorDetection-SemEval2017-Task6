@@ -14,7 +14,6 @@
 #	651794322560581632	Battery Operated Wet Dream Goggles #BadInventions @midnight	-27.781261444091797
 #	651783489646411776	#BadInventions @midnight cigarette scented air freshener	-27.478612899780273
 #	651601127432192000	@midnight hashtag games #BadInventions jk but please use this on the show	-40.52326965332031
-#	651772852333490176	Pumpkin Spice Viagra  #BadInventions @midnight	-15.142515182495117
 
 ##### Program starts here #####
 import sys, os
@@ -34,9 +33,9 @@ LM = "/Users/xinru/Developer/Thesis/src/kenlm/build/text.arpa"
 model = kenlm.Model(LM)
 
 # input file path. Change the path to your own path
-root_path = '/Users/xinru/Developer/Thesis/src/SemEval/trial_dir/trial_data'
+root_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data'
 # output file path. Change the path to your own path
-result_path = '/Users/xinru/Developer/Thesis/src/SemEval/trial_dir/trial_data_result'
+result_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data_result'
 
 # read in the file
 for filename in listdir_nohidden(root_path):
@@ -53,7 +52,11 @@ for filename in listdir_nohidden(root_path):
 			for row in tsvin:
 				# raw tweet (without urls)
 				rt = re.sub(r'https?:\/\/.*', '', str(row[1]), flags=re.MULTILINE)
+				rt = re.sub(r'\s?@\w+\s?', '', rt, flags=re.MULTILINE)
+				#rt = re.sub(r'\s?#\w+\s?', '', rt, flags=re.MULTILINE)
+				# lowercase
+				rt = rt.lower()
 				#count = len(re.findall(r'\w+', rt))
 				# score based on the language model for each tweet
-				writer.writerow([row[0], row[1], model.score(rt)])
+				writer.writerow([row[0], row[1], model.score(rt, bos = False, eos = False)])
 ##### Program ends here #####
