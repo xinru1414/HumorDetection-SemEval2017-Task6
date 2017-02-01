@@ -8,7 +8,7 @@
 
 # Language: Python 2.7
 # Command line example:
-#	python beets.py
+#	python beets.py trial_dir/trial_data trial_dir/trial_data_lm_score_result/
 # Outputfile example: #BadInventions.tsv 
 # Format: tweet_id		tweet        												language model score
 #	651794322560581632	Battery Operated Wet Dream Goggles #BadInventions @midnight	-27.781261444091797
@@ -29,14 +29,15 @@ def listdir_nohidden(path):
 			yield f
 
 # load the Language Model trained on the trainig data. Change the path to your own path
-LM = "/Users/xinru/Developer/Thesis/src/kenlm/build/text.arpa"
+LM = "/home/csgrads/yanxx418/Developer/Thesis/gh/SemEval/kenlm-master/build/text.arpa"
 model = kenlm.Model(LM)
 
 # input file path. Change the path to your own path
-root_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data'
+#root_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data'
+root_path = sys.argv[1]
 # output file path. Change the path to your own path
-result_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data_result'
-
+#result_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data_result'
+result_path = sys.argv[2]
 # read in the file
 for filename in listdir_nohidden(root_path):
 	fullpath = os.path.join(root_path, filename)
