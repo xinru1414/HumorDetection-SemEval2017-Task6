@@ -8,7 +8,7 @@
 
 # Language: Python 2.7
 # Command line example:
-#	python avocado.py train_dir/train_data plain.txt
+#	python avocado.py lm_train_dir/lm_train_data plain.txt
 # Output file: (each tweet is on its own line)
 # 	Rollin' Atkinson #420Celebs @midnight
 #	@midnight Jon Bong Jovi #420celebs
