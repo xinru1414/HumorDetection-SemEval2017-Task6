@@ -8,7 +8,7 @@
 
 # Language: Python 2.7
 # Command line example:
-#	python avocado.py 
+#	python avocado.py train_dir/train_data plain.txt
 # Output file: (each tweet is on its own line)
 # 	Rollin' Atkinson #420Celebs @midnight
 #	@midnight Jon Bong Jovi #420celebs
@@ -22,9 +22,11 @@ import csv
 import re
 
 # read in all files from train_dir/train_data. Change the path to your own path
-root_path = 'train_dir/train_data'
+#root_path = 'train_dir/train_data'
+root_path = sys.argv[1]
 # outputs all tweets in a plain txt file
-outfile = 'plain.txt'
+#outfile = 'plain.txt'
+outfile = sys.argv[2]
 
 
 with open(outfile, 'w') as o:
