@@ -14,7 +14,7 @@
 
 # Language: Python 2.7
 # Command line example:
-#	python cilantro_b.py
+#	python cilantro_b.py lm_train_result/lm_score/
 # Output file example: #BadInventions.tsv 
 #	651782900413792257
 #	651787332107022336
@@ -23,7 +23,7 @@
 
 
 ##### Program starts here #####
-import os
+import os, sys
 import csv
 
 # do not read hidden files in the folder
@@ -33,13 +33,14 @@ def listdir_nohidden(path):
 			yield f
 
 # input file folder. Change the path to your own path
-root_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data_result'
-
+#root_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data_result'
+root_path = sys.argv[1]
 
 for filename in listdir_nohidden(root_path):
 	fullpath = os.path.join(root_path, filename)
 	if fullpath.endswith(".tsv"):
 		outfile = fullpath.replace(".tsv", "") + '_PREDICT.tsv'
+		outfile = outfile.replace("lm_score", "B_lm")
 	# print(outfile)
 	# read in file l
 	with open(fullpath,'r') as tsvin:

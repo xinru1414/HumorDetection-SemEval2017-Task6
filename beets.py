@@ -8,7 +8,7 @@
 
 # Language: Python 2.7
 # Command line example:
-#	python beets.py trial_dir/trial_data trial_dir/trial_data_lm_score_result/
+#	python beets.py evaluation_dir/evaluation_data/ lm_train_result/lm_score/
 # Outputfile example: #BadInventions.tsv 
 # Format: tweet_id		tweet        												language model score
 #	651794322560581632	Battery Operated Wet Dream Goggles #BadInventions @midnight	-27.781261444091797
@@ -53,11 +53,10 @@ for filename in listdir_nohidden(root_path):
 			for row in tsvin:
 				# raw tweet (without urls)
 				rt = re.sub(r'https?:\/\/.*', '', str(row[1]), flags=re.MULTILINE)
-				rt = re.sub(r'\s?@\w+\s?', '', rt, flags=re.MULTILINE)
+				#rt = re.sub(r'\s?@\w+\s?', '', rt, flags=re.MULTILINE)
 				#rt = re.sub(r'\s?#\w+\s?', '', rt, flags=re.MULTILINE)
 				# lowercase
-				rt = rt.lower()
-				#count = len(re.findall(r'\w+', rt))
+				#rt = rt.lower()
 				# score based on the language model for each tweet
 				writer.writerow([row[0], row[1], model.score(rt, bos = False, eos = False)])
 ##### Program ends here #####

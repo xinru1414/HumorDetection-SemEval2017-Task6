@@ -38,5 +38,6 @@ with open(outfile, 'w') as o:
 			for row in tsvin:
 				# getting rid of urls in the tweet
 				row = re.sub(r'https?:\/\/.*', '', str(row[1]), flags=re.MULTILINE)
+				#row = row.lower()
 				o.write(row + '\n')
 ##### Program ends here #####
