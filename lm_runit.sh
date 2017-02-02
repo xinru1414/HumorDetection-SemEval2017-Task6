@@ -1,3 +1,7 @@
+# This script runs experiments using language models with training data from the SemEval task
+
+
+
 # echo 'Make sure to install kenlm for example: pip install https://github.com/kpu/kenlm/archive/master.zip'
 #echo 'Installing kenlm'
 #pip install https://github.com/kpu/kenlm/archive/master.zip

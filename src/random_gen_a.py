@@ -7,7 +7,7 @@
 
 # Language: Python 2.7
 # Command line example:
-#	python random_gen_a.py
+#	python src/random_gen_a.py mydata/lm_train_result/lm_score/
 # Output file example: #BadInventions.tsv 
 #	651782900413792257	651787332107022336	1
 #	651782900413792257	651777234198495232	1
@@ -15,7 +15,7 @@
 #	651782900413792257	651772852333490176	1
 
 ##### Program starts here #####
-import os
+import os,sys
 import csv
 import itertools
 import random
@@ -26,13 +26,14 @@ def listdir_nohidden(path):
 		if not f.startswith('.'):
 			yield f
 
-# input file folder. Change the path to your own path
-root_path = '/Users/xinru/Developer/Thesis/src/SemEval/trial_dir/trial_data_result'
+# input file folder. 
+root_path = sys.argv[1]
 
 for filename in listdir_nohidden(root_path):
 	fullpath = os.path.join(root_path, filename)
 	if fullpath.endswith(".tsv"):
 		outfile = fullpath.replace(".tsv", "") + '_PREDICT.tsv'
+		outfile = outfile.replace("lm_train_result/lm_score", "rm_result/A_rm")
 	with open(fullpath,'r') as tsvin:
 		tsvin = csv.reader(tsvin, delimiter='\t')
 		sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=True)

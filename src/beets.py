@@ -8,7 +8,7 @@
 
 # Language: Python 2.7
 # Command line example:
-#	python beets.py evaluation_dir/evaluation_data/ lm_train_result/lm_score/
+#	python src/beets.py data/evaluation_dir/evaluation_data/ mydata/lm_train_result/lm_score/
 # Outputfile example: #BadInventions.tsv 
 # Format: tweet_id		tweet        												language model score
 #	651794322560581632	Battery Operated Wet Dream Goggles #BadInventions @midnight	-27.781261444091797
