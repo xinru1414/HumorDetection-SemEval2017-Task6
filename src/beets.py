@@ -29,7 +29,7 @@ def listdir_nohidden(path):
 			yield f
 
 # load the Language Model trained on the trainig data. Change the path to your own path
-LM = "/home/csgrads/yanxx418/Developer/Thesis/gh/SemEval/text.arpa"
+LM = "mydata/text.arpa"
 model = kenlm.Model(LM)
 
 # input file path. Change the path to your own path

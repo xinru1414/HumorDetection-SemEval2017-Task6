@@ -9,7 +9,7 @@
 	
 # Language: Python 2.7
 # Command line example:
-#	python cilantro_a.py
+#	python cilantro_a.py lm_train_result/lm_score/
 # Output file example: #BadInventions.tsv 
 #	651782900413792257	651787332107022336	1
 #	651782900413792257	651777234198495232	1
