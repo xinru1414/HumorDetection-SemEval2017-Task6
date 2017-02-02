@@ -1,4 +1,4 @@
-#echo 'Installing kenlm'
+echo 'Installing kenlm'
 pip install https://github.com/kpu/kenlm/archive/master.zip
 
 cd code/kenlm-master
