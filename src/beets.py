@@ -33,10 +33,8 @@ LM = "mydata/text.arpa"
 model = kenlm.Model(LM)
 
 # input file path. Change the path to your own path
-#root_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data'
 root_path = sys.argv[1]
 # output file path. Change the path to your own path
-#result_path = '/Users/xinru/Developer/Thesis/SemEval2017/Humor/trial_dir/trial_data_result'
 result_path = sys.argv[2]
 # read in the file
 for filename in listdir_nohidden(root_path):
