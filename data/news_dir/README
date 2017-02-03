@@ -1,0 +1,14 @@
+The news_dir contains the sample news data used in training the language model. You could get it here:
+http://www.statmt.org/wmt11/translation-task.html#download
+
+To be more specific:
+To dowload
+wget http://www.statmt.org/wmt11/training-monolingual-news-commentary.tgz (From the News Commentary corpus)
+wget http://www.statmt.org/wmt11/training-monolingual-news-2007.tgz(From the News Crawl corpus (2007 only))
+wget http://www.statmt.org/wmt11/training-monolingual-news-2008.tgz(From the News Crawl corpus (2008 only))
+To extract
+tar zxvf training-monolingual-news-commentary.tgz
+tar zxvf training-monolingual-news-2007.tgz
+tar zxvf training-monolingual-news-2008.tgz
+
+For this project purpose, the English news (file ends in .en) are kept.
