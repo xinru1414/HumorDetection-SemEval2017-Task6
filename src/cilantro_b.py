@@ -45,7 +45,9 @@ for filename in listdir_nohidden(root_path):
 	with open(fullpath,'r') as tsvin:
 		tsvin = csv.reader(tsvin, delimiter='\t')
 		# sort the tweet based on the LM score they get
-		sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=True)
+		# reverse = True for funny tweets 
+		# reverse = False for news data 
+		sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=False)
 		with open(outfile, 'w') as o:
 			#o.write('\n'.join(map(str,sortedlist)))
 			for i in range(len(sortedlist)):
