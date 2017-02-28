@@ -17,6 +17,9 @@ For Subtask A, the system should be able to correctly predict which tweet is fun
 
 **src**: This directory contains source code for the system.
 
+**script**: This directory contains the install script and various run scripts of the system.
+
+
 #**HOW TO RUN THE DULUTH SYSTEM**
 The system is written in Python 2.7
 
