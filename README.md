@@ -26,8 +26,25 @@ The system is written in Python 2.7
 The **script** folder contains various scripts to set up and run the system.
 
 
-# METHOD
+#**METHOD**
 The system uses language models (bigram and trigram) to train the corpus. Sepeficially, the system uses KenLM Language Model Toolkit.
+
+Training Language models (LMs) is a straightforward way to collect set of rules by utilizing the fact that words do not appear in an arbitrary order, which means we can gain useful information from a word and its neighbors. A statistical language model is a model that computes the probability of a sequence of words or an upcoming word. Below are two examples of language modeling:
+
+To compute the probability of a sequence of words $W$ given the sequence w1, w2, w3, we have:
+
+P(W) = P(w1) * P(w2) * P(w3)
+
+
+To compute the probability of an upcoming word W3 given the sequence W1,W2, we have:
+
+P(w3|w1,w2)
+
+
+The idea of word prediction with probabilistic models is called the N-gram model, which predicts the upcoming word from the previous N-1 words. An N-gram is a contiguous sequence of N words: a unigram is a single word, a bigram is a two-word sequence of words and a trigram is a three-word sequence of words. For example, in tweet "tears in Ramen #SingleLifeIn3Words", "tears", "in", "Ramen" and "#SingleLifeIn3Words" are unigrams; "tears in", "in Ramen" and "Ramen SingleLifeIn3Words" are bigrams and "tears in Ramen" and "in Ramen #SingleLifeIn3Words" are trigrams.
+
+When we use for example, a trigram LM, to predict the conditional probability of the next word, we are thus making the assumption that the probability of a word depends only on a small number of previous words is called the Markov assumption.
+
 
 # REFERENCE
 SemEval:  http://alt.qcri.org/semeval2017/task6/
