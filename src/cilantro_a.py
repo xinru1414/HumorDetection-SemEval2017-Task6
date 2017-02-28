@@ -30,6 +30,8 @@ def listdir_nohidden(path):
 			yield f
 
 root_path = sys.argv[1]
+# set up news data or tweets data
+data = sys.argv[2]
 
 for filename in listdir_nohidden(root_path):
 	fullpath = os.path.join(root_path, filename)
@@ -41,16 +43,22 @@ for filename in listdir_nohidden(root_path):
 		# sort the tweet based on the LM score they get
 		# reverse = True for funny tweets 
 		# reverse = False for news data
-		sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=False)
+		sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=True)
 		with open(outfile, 'w') as o:
 			for a, b in itertools.combinations(range(len(sortedlist)), 2):
 				# > for funny tweets
 				# < for news data
-				if float(sortedlist[a][2]) < float(sortedlist[b][2]):
-					o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '1' + '\n')
-				# b is funnier
+				if data == 'tweets':
+					if float(sortedlist[a][2]) > float(sortedlist[b][2]):
+						o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '1' + '\n')
+					else:
+						o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '0' + '\n')
 				else:
-					o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '0' + '\n')
+					if float(sortedlist[a][2]) < float(sortedlist[b][2]):
+						o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '1' + '\n')
+					else:
+						o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '0' + '\n')
+
 ##### Program ends here #####
 
 

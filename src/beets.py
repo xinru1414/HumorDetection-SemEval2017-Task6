@@ -28,17 +28,26 @@ def listdir_nohidden(path):
 		if not f.startswith('.'):
 			yield f
 
-# load the Language Model trained on the trainig data. 
-# text.arpa for funny tweets 
-#LM = "mydata/text.arpa"
-# text_un.arpa for news data
-LM = "mydata/text_un.arpa"
-model = kenlm.Model(LM)
 
 # input file path. Change the path to your own path
 root_path = sys.argv[1]
 # output file path. Change the path to your own path
 result_path = sys.argv[2]
+# set up news data or tweets data
+data = sys.argv[3]
+
+# load the Language Model trained on the trainig data. 
+# text.arpa for funny tweets 
+#LM = "mydata/text.arpa"
+# text_un.arpa for news data
+if data == "tweets":
+	LM = "mydata/text.arpa"
+else:
+	LM = "mydata/text_un.arpa"
+
+model = kenlm.Model(LM)
+
+
 # read in the file
 for filename in listdir_nohidden(root_path):
 	fullpath = os.path.join(root_path, filename)

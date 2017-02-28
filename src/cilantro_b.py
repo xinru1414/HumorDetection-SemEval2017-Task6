@@ -34,6 +34,8 @@ def listdir_nohidden(path):
 
 # input file folder. Change the path to your own path
 root_path = sys.argv[1]
+# set up news data or tweets data
+data = sys.argv[2]
 
 for filename in listdir_nohidden(root_path):
 	fullpath = os.path.join(root_path, filename)
@@ -46,8 +48,11 @@ for filename in listdir_nohidden(root_path):
 		tsvin = csv.reader(tsvin, delimiter='\t')
 		# sort the tweet based on the LM score they get
 		# reverse = True for funny tweets 
-		# reverse = False for news data 
-		sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=False)
+		# reverse = False for news data
+		if data == 'tweets':
+			sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=True)
+		else:
+			sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=False)
 		with open(outfile, 'w') as o:
 			#o.write('\n'.join(map(str,sortedlist)))
 			for i in range(len(sortedlist)):
