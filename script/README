@@ -5,3 +5,10 @@ lm_news_runit.sh: run script to run Duluth using trigram LM trained on the news 
 lm_train_runit.sh: run script to run Duluth using trigram LM trained on the tweets data.
 rm_runit.sh: baseline script for both tasks.
 evaluation.sh: evaluation script provided by SemEval
+
+Note that for the news training data, you'll have to prepare it yourself. Here are the steps:
+1. Go to http://www.statmt.org/wmt11/translation-task.html, under "Download" section, download the News Commentary corpus and the News Crawl corpus from 2008, 2010 and 2011.
+2. Combine them into one input file (input.txt)
+3. Feed the input file into KenLM, name the N-gram LM as "text_un.arpa":
+code/kenlm-master/build/bin/lmplz -o 3 -S 70% < mydata/input.txt > mydata/text_un.arpa
+Now the news LM is ready to use.

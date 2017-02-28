@@ -8,12 +8,13 @@
 
 # Language: Python 2.7
 # Command line example:
-#	python src/beets.py data/evaluation_dir/evaluation_data/ mydata/lm_train_result/lm_score/
+#	python src/beets.py data/evaluation_dir/evaluation_data/ mydata/lm_train_result/lm_score/ news
 # Outputfile example: #BadInventions.tsv 
 # Format: tweet_id		tweet        												language model score
 #	651794322560581632	Battery Operated Wet Dream Goggles #BadInventions @midnight	-27.781261444091797
 #	651783489646411776	#BadInventions @midnight cigarette scented air freshener	-27.478612899780273
 #	651601127432192000	@midnight hashtag games #BadInventions jk but please use this on the show	-40.52326965332031
+#
 # This file is part of the Duluth system.
 #
 # The Duluth system is free software: you can redistribute it and/or modify
