@@ -14,6 +14,20 @@
 #	651794322560581632	Battery Operated Wet Dream Goggles #BadInventions @midnight	-27.781261444091797
 #	651783489646411776	#BadInventions @midnight cigarette scented air freshener	-27.478612899780273
 #	651601127432192000	@midnight hashtag games #BadInventions jk but please use this on the show	-40.52326965332031
+# This file is part of the Duluth system.
+#
+# The Duluth system is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# The Duluth system is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with the Duluth system.  If not, see <http://www.gnu.org/licenses/>.
 
 ##### Program starts here #####
 import sys, os
