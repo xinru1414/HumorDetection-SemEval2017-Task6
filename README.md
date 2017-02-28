@@ -8,6 +8,17 @@ In each episode the host comes up with a topic in the form of a hashtag. For exa
 There are two subtasks -- Subtask A: Pairwise Comparison; Subtask B: Semi-Ranking
 For Subtask A, the system should be able to correctly predict which tweet is funnier given two tweets, based on the gold label. For Subtask B, the system should produce a ranking of tweets from the funniest to the least funny given an input file of tweets for a specific hashtag.
 
+#**STRUCTURE**
+**code**: This directory contains all the third party code including KenLM and the Evaluation script for both subtasks provided by SemEval.
+
+**data**: This directory contains all the tweets training data and evaluation data provided by SemEval task.
+
+**mydata**:This directory contains the result of running the system.
+
+**src**: This directory contains source code for the system.
+
+
+
 #**HOW TO RUN THE DULUTH SYSTEM**
 The system is written in Python 2.7
 
