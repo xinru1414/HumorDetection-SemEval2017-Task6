@@ -19,6 +19,8 @@ For Subtask A, the system should be able to correctly predict which tweet is fun
 
 **script**: This directory contains the install script and various run scripts of the system.
 
+**Xinru_Poster**: A poster that briefly examplains the system and how it worked during SemEval evaluation.
+
 
 #**HOW TO RUN THE DULUTH SYSTEM**
 The system is written in Python 2.7
