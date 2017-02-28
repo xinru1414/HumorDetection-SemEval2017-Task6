@@ -23,19 +23,8 @@ For Subtask A, the system should be able to correctly predict which tweet is fun
 #**HOW TO RUN THE DULUTH SYSTEM**
 The system is written in Python 2.7
 
-You can download the training data and Evaluation script from the SemEval website (http://alt.qcri.org/semeval2017/task6/)
+The **script** folder contains various scripts to set up and run the system.
 
-Step 1: Run `pip install https://github.com/kpu/kenlm/archive/master.zip` to install kenlm
-
-Step 2: Run `python avocado.py` to generate training corpus (plain txt file which contains tweets) for the language model
-
-Step 3: Under kenlm directory Run `/build/bin/lmplz -o 3 -S 70% </path/to/the/plain/text/file/plain.txt >text.arpa` to train the language model (specific usage refers to KenLM: https://kheafield.com/code/kenlm/)
-
-Step 4: Run `python beets.py` to generate scores for each tweet based on the languge model
-
-Step 5: Run `python cilantro_a.py` / `python cilantro_b.py` to generate Task A / Task B result
-
-Step 6: Run `python TaskA_Eval/TaskA_Eval_Script.py predict_test/ gold_test/` / `py TaskB_Eval/TaskB_Eval_Script.py predict_test/ gold_test/` to evaluate Task A / Task B result
 
 # METHOD
 The system uses language models (bigram and trigram) to train the corpus. Sepeficially, the system uses KenLM Language Model Toolkit.
@@ -45,6 +34,9 @@ SemEval:  http://alt.qcri.org/semeval2017/task6/
 
 KenLM Language Model Toolkit:  https://github.com/kpu/kenlm
                                http://kheafield.com/code/kenlm/
+                            
+News training data: http://www.statmt.org/wmt11/translation-task.html
+
 
 #**AUTHORS**
 Xinru Yan, University of Minnesota Duluth yanxx418@d.umn.edu
