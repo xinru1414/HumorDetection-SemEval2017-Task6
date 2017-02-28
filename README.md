@@ -17,8 +17,6 @@ For Subtask A, the system should be able to correctly predict which tweet is fun
 
 **src**: This directory contains source code for the system.
 
-
-
 #**HOW TO RUN THE DULUTH SYSTEM**
 The system is written in Python 2.7
 
@@ -44,6 +42,33 @@ SemEval:  http://alt.qcri.org/semeval2017/task6/
 
 KenLM Language Model Toolkit:  https://github.com/kpu/kenlm
                                http://kheafield.com/code/kenlm/
+
+#**AUTHORS**
+Xinru Yan, University of Minnesota Duluth yanxx418@d.umn.edu
+
+Ted Pedersen, University of Minnesota Duluth tpederse@d.umn.edu
+
+#**COPYRIGHT AND LICENCE**
+Copyright (C) 2017, Xinru Yan, Ted Pedersen
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program. If not, see <http://www.gnu.org/licenses/>.
+
+
+    
+
+
+
         
 
         
