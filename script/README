@@ -1,0 +1,7 @@
+This directory contains the install script and various run scripts of the system.
+
+install.sh: install script to set up KenLM
+lm_news_runit.sh: run script to run Duluth using trigram LM trained on the news data
+lm_train_runit.sh: run script to run Duluth using trigram LM trained on the tweets data.
+rm_runit.sh: baseline script for both tasks.
+evaluation.sh: evaluation script provided by SemEval
