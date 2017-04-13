@@ -1,4 +1,4 @@
-#**OVERVIEW**
+## **OVERVIEW**
 This project describes the **Duluth** system that participated in the SemEval 2017 Task 6 "#HashtagWars: Learning a sense of humor" (http://alt.qcri.org/semeval2017/task6/). The goal of the task is to develop a system that learns the sense of humor represented in the comedy show @midnight (http://www.cc.com/shows/-midnight). The Duluth system completed Subtask A and Subtask B using N-gram language models, ranking well during evaluation.
 
 ## HashtagWars
