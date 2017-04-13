@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Humor Detection - SemEval2017 Task6 by yanxx418</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Humor Detection - SemEval2017 Task6</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.umn.edu/yanxx418/HumorDetection-SemEval2017Task6" class="btn">View on GitHub</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>OVERVIEW</strong>
+</h1>
+
+<p>This project describes the <strong>Duluth</strong> system that participated in the SemEval 2017 Task 6 "#HashtagWars: Learning a sense of humor" (<a href="http://alt.qcri.org/semeval2017/task6/">http://alt.qcri.org/semeval2017/task6/</a>). The goal of the task is to develop a system that learns the sense of humor represented in the comedy show @midnight (<a href="http://www.cc.com/shows/-midnight">http://www.cc.com/shows/-midnight</a>). The Duluth system completed Subtask A and Subtask B using N-gram language models, ranking well during evaluation.</p>
+
+<h2>
+<a id="hashtagwars" class="anchor" href="#hashtagwars" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HashtagWars</h2>
+
+<p>In each episode the host comes up with a topic in the form of a hashtag. For example, “#BadInventions” is one of the topics in the hashtag format. In order to respond to the topic, the guests must provide a funny tweet including the hashtag. The home audience is also encouraged to participate this game in a certain amount of time by posting their own tweet using the hashtag and @ing the show “@midnight”. In the next episode, the show chooses top 10 funny tweets from the audience’s posts and selects a single winning tweet which is the funniest from the show’s point of view. The SemEval task collects tweets to conduct the dataset. Note that there are three buckets for the tweets: the winning tweet, top 10 but not winning, and not 10. Data is available here: <a href="http://alt.qcri.org/semeval2017/task6/index.php?id=data-and-tools">http://alt.qcri.org/semeval2017/task6/index.php?id=data-and-tools</a></p>
+
+<h2>
+<a id="goal" class="anchor" href="#goal" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Goal</h2>
+
+<p>There are two subtasks -- Subtask A: Pairwise Comparison; Subtask B: Semi-Ranking
+For Subtask A, the system should be able to correctly predict which tweet is funnier given two tweets, based on the gold label. For Subtask B, the system should produce a ranking of tweets from the funniest to the least funny given an input file of tweets for a specific hashtag.</p>
+
+<h1>
+<a id="structure" class="anchor" href="#structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>STRUCTURE</strong>
+</h1>
+
+<p><strong>code</strong>: This directory contains all the third party code including KenLM and the Evaluation script for both subtasks provided by SemEval.</p>
+
+<p><strong>data</strong>: This directory contains all the tweets training data and evaluation data provided by SemEval task.</p>
+
+<p><strong>mydata</strong>:This directory contains the result of running the system.</p>
+
+<p><strong>src</strong>: This directory contains source code for the system.</p>
+
+<p><strong>script</strong>: This directory contains the install script and various run scripts of the system.</p>
+
+<p><strong>Xinru_Poster</strong>: A poster that briefly examplains the system and how it worked during SemEval evaluation.</p>
+
+<h1>
+<a id="how-to-run-the-duluth-system" class="anchor" href="#how-to-run-the-duluth-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>HOW TO RUN THE DULUTH SYSTEM</strong>
+</h1>
+
+<p>The system is written in Python 2.7</p>
+
+<p>The <strong>script</strong> folder contains various scripts to set up and run the system.</p>
+
+<h1>
+<a id="method" class="anchor" href="#method" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>METHOD</strong>
+</h1>
+
+<p>The system uses language models (bigram and trigram) to train the corpus. Sepeficially, the system uses KenLM Language Model Toolkit.</p>
+
+<p>Training Language models (LMs) is a straightforward way to collect set of rules by utilizing the fact that words do not appear in an arbitrary order, which means we can gain useful information from a word and its neighbors. A statistical language model is a model that computes the probability of a sequence of words or an upcoming word. Below are two examples of language modeling:</p>
+
+<p>To compute the probability of a sequence of words $W$ given the sequence w1, w2, w3, we have:</p>
+
+<p>P(W) = P(w1) * P(w2) * P(w3)</p>
+
+<p>To compute the probability of an upcoming word W3 given the sequence W1,W2, we have:</p>
+
+<p>P(w3|w1,w2)</p>
+
+<p>The idea of word prediction with probabilistic models is called the N-gram model, which predicts the upcoming word from the previous N-1 words. An N-gram is a contiguous sequence of N words: a unigram is a single word, a bigram is a two-word sequence of words and a trigram is a three-word sequence of words. For example, in tweet "tears in Ramen #SingleLifeIn3Words", "tears", "in", "Ramen" and "#SingleLifeIn3Words" are unigrams; "tears in", "in Ramen" and "Ramen SingleLifeIn3Words" are bigrams and "tears in Ramen" and "in Ramen #SingleLifeIn3Words" are trigrams.</p>
+
+<p>When we use for example, a trigram LM, to predict the conditional probability of the next word, we are thus making the assumption that the probability of a word depends only on a small number of previous words is called the Markov assumption.</p>
+
+<h1>
+<a id="reference" class="anchor" href="#reference" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>REFERENCE</h1>
+
+<p>SemEval:  <a href="http://alt.qcri.org/semeval2017/task6/">http://alt.qcri.org/semeval2017/task6/</a></p>
+
+<p>KenLM Language Model Toolkit:  <a href="https://github.com/kpu/kenlm">https://github.com/kpu/kenlm</a>
+                               <a href="http://kheafield.com/code/kenlm/">http://kheafield.com/code/kenlm/</a></p>
+
+<p>News training data: <a href="http://www.statmt.org/wmt11/translation-task.html">http://www.statmt.org/wmt11/translation-task.html</a></p>
+
+<h1>
+<a id="authors" class="anchor" href="#authors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>AUTHORS</strong>
+</h1>
+
+<p>Xinru Yan, University of Minnesota Duluth <a href="mailto:yanxx418@d.umn.edu">yanxx418@d.umn.edu</a></p>
+
+<p>Ted Pedersen, University of Minnesota Duluth <a href="mailto:tpederse@d.umn.edu">tpederse@d.umn.edu</a></p>
+
+<h1>
+<a id="copyright-and-licence" class="anchor" href="#copyright-and-licence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>COPYRIGHT AND LICENCE</strong>
+</h1>
+
+<p>Copyright (C) 2017, Xinru Yan, Ted Pedersen</p>
+
+<p>This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License along
+with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
+
+<h1>
+<a id="release" class="anchor" href="#release" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>RELEASE</strong>
+</h1>
+
+<p>First release on March 15th,  2017</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.umn.edu/yanxx418/HumorDetection-SemEval2017Task6">Humor Detection - SemEval2017 Task6</a> is maintained by <a href="https://github.umn.edu/yanxx418">yanxx418</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
