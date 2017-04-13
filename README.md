@@ -1,4 +1,4 @@
-## **OVERVIEW**
+# **OVERVIEW**
 This project describes the **Duluth** system that participated in the SemEval 2017 Task 6 "#HashtagWars: Learning a sense of humor" (http://alt.qcri.org/semeval2017/task6/). The goal of the task is to develop a system that learns the sense of humor represented in the comedy show @midnight (http://www.cc.com/shows/-midnight). The Duluth system completed Subtask A and Subtask B using N-gram language models, ranking well during evaluation.
 
 ## HashtagWars
@@ -8,7 +8,7 @@ In each episode the host comes up with a topic in the form of a hashtag. For exa
 There are two subtasks -- Subtask A: Pairwise Comparison; Subtask B: Semi-Ranking
 For Subtask A, the system should be able to correctly predict which tweet is funnier given two tweets, based on the gold label. For Subtask B, the system should produce a ranking of tweets from the funniest to the least funny given an input file of tweets for a specific hashtag.
 
-#**STRUCTURE**
+# **STRUCTURE**
 **code**: This directory contains all the third party code including KenLM and the Evaluation script for both subtasks provided by SemEval.
 
 **data**: This directory contains all the tweets training data and evaluation data provided by SemEval task.
@@ -22,7 +22,7 @@ For Subtask A, the system should be able to correctly predict which tweet is fun
 **Xinru_Poster**: A poster that briefly examplains the system and how it worked during SemEval evaluation.
 
 
-#**HOW TO RUN THE DULUTH SYSTEM**
+# **HOW TO RUN THE DULUTH SYSTEM**
 The system is written in Python 2.7
 
 The **script** folder contains various scripts to set up and run the system.
@@ -57,12 +57,12 @@ KenLM Language Model Toolkit:  https://github.com/kpu/kenlm
 News training data: http://www.statmt.org/wmt11/translation-task.html
 
 
-#**AUTHORS**
+# **AUTHORS**
 Xinru Yan, University of Minnesota Duluth yanxx418@d.umn.edu
 
 Ted Pedersen, University of Minnesota Duluth tpederse@d.umn.edu
 
-#**COPYRIGHT AND LICENCE**
+# **COPYRIGHT AND LICENCE**
 Copyright (C) 2017, Xinru Yan, Ted Pedersen
 
 This program is free software: you can redistribute it and/or modify it
@@ -78,7 +78,7 @@ Public License for more details.
 You should have received a copy of the GNU General Public License along
 with this program. If not, see <http://www.gnu.org/licenses/>.
 
-#**RELEASE**
+# **RELEASE**
 First release on March 15th,  2017
 
 
