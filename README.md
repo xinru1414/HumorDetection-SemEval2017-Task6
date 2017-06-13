@@ -28,7 +28,7 @@ The system is written in Python 2.7
 The **script** folder contains various scripts to set up and run the system.
 
 
-#**METHOD**
+# **METHOD**
 The system uses language models (bigram and trigram) to train the corpus. Sepeficially, the system uses KenLM Language Model Toolkit.
 
 Training Language models (LMs) is a straightforward way to collect set of rules by utilizing the fact that words do not appear in an arbitrary order, which means we can gain useful information from a word and its neighbors. A statistical language model is a model that computes the probability of a sequence of words or an upcoming word. Below are two examples of language modeling:
