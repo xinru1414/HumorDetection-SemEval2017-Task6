@@ -50,4 +50,5 @@ TODO
 - train_model.py: train Char-LSTM LM
 - score.py: score testing tweet
 - evaluation_a.py: getting results ready for evaluation (in python2.7)
+- test_score.py: a program to test out the trained language model
 
