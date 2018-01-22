@@ -50,5 +50,8 @@ TODO
 - train_model.py: train Char-LSTM LM
 - score.py: score testing tweet
 - evaluation_a.py: getting results ready for evaluation (in python2.7)
-- test_score.py: a program to test out the trained language model
+- test_score.py: a program to test out the trained language model. currently prints out the probabilities for testing sentences by using the LM trained on 2010 news
+```
+python3 durian/test_score.py models/model_10.h5
+```
 
