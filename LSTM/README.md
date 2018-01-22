@@ -40,6 +40,9 @@ TODO
 - evaluation_results_news: raw results from news LM
 - evaluation_results_tweets: raw results form tweet LM
 - models: trained models
+  - model_10.h5 is the model trained on 2010 news data
+  - model_tweets.h5 is the model trainded on tweets data (20 epochs)
+  - model_tweets_2.h5 is the model trainded on tweets data (1 epoch)
 - npz_files: pre-processed data
 ### Programs:
 - config.py: configuration of the system
