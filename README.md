@@ -54,4 +54,3 @@ with this program. If not, see <http://www.gnu.org/licenses/>.
 
 # **RELEASE**
 First release on March 15th,  2017
-TBC
