@@ -2,7 +2,9 @@
 Dependency: 
 
 python version: python3.5
+
 keras with Tensorflow backend, gpu enabled
+
 tweet-preprocessor
 ```
 pip install tweet-preprocessor
