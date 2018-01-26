@@ -47,12 +47,17 @@ def listdir_nohidden(path):
 root_path = sys.argv[1]
 # set up news data or tweets data
 data = sys.argv[2]
+# set up which system
+system = sys.argv[3]
 
 for filename in listdir_nohidden(root_path):
 	fullpath = os.path.join(root_path, filename)
 	if fullpath.endswith(".tsv"):
 		outfile = fullpath.replace(".tsv", "") + '_PREDICT.tsv'
-		outfile = outfile.replace("lm_score", "A_lm")
+		if system == 'Ngram':
+			outfile = outfile.replace("lm_score", "A_lm")
+		else:
+			outfile = outfile.replace("results_tweets_new", "A_lm")
 	with open(fullpath,'r') as tsvin:
 		tsvin = csv.reader(tsvin, delimiter='\t')
 		# sort the tweet based on the LM score they get
