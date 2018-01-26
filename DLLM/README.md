@@ -1,5 +1,12 @@
 # This folder contains the stage two method (Char-LSTM LM) for Humor detection
-Dependency: python version: python3.5
+Dependency: 
+
+python version: python3.5
+keras with Tensorflow backend, gpu enabled
+tweet-preprocessor
+```
+pip install tweet-preprocessor
+```
 
 ## Structure
 ### mydata
