@@ -1,58 +1,122 @@
 import numpy as np
 import sys
+import os
+import preprocessor as p
+import shutil
+import time
+
 from config import *
 
-# the training corpus
-FILENAME =  sys.argv[1]
-# the output file name
-NPFILE =  sys.argv[2]
 
+class SentencePreProcessor(object):
+    def __init__(self, in_filename, out_dir, sentences_per_file, debug=False):
+        self.in_filename = in_filename
+        self.sentences_per_file = sentences_per_file
+        self.out_dir = out_dir
+        self.cur_output_file = 0
+        self.sentences = []
+        self.next_chars = []
+        # debug signal, set to true
+        self.debug = debug
+        self.p_bar_start = 0
+        self.bytes_cleaned = 0
+        self.total_sentence_count = 0
+        self.p_bar_length = 70
 
-def read_file(filename):
-    """
-    read in input file as lower_case text, get rid of new line and return text as string
-    """
-    text = []
-    with open(filename, "r", encoding='UTF-8') as f:
-        for line in f:
-            text += text2ints(pad(line.lower().replace("\n", " ")))
-    return text
+    def get_p_bar(self, i, t):
+        """
+        helper function to see the progress made and an ETA
+        :return: progress bar
+        """
+
+        if self.p_bar_start == 0 or i == 0:
+            self.p_bar_start = time.time()
+            return ""
+        if i/t == 1:
+            return "\r[{}] {}/{} Took: {:.2f} sec".format("*"*self.p_bar_length, t, t, time.time()-self.p_bar_start)
+        stars = round((i / t) * self.p_bar_length)
+        spaces = self.p_bar_length - stars
+        past_time = time.time()-self.p_bar_start
+        time_per_i = past_time/i
+        estimated_total_time = time_per_i*t
+        eta = estimated_total_time - past_time
+        return "\r[{}{}] {}/{} ETA: {:.2f} sec".format("*"*stars, " "*spaces, i, t, eta)
+
+    def clean_line(self, line):
+        """
+        clean each line of input file
+        :param line: line in the input file
+        :return: cleaned version of line
+        """
+        if self.debug:
+            self.bytes_cleaned += len(line)
+        return text2ints(pad(p.clean(line.lower()).replace("\n", " ")))
+
+    def __dump(self, amount):
+        """
+        save the X = sentences[] and Y = next_chars[] to an npz file
+        :param amount: line_batchsize
+        """
+        X = np.asarray(self.sentences[:amount], dtype="int8")
+        Y = np.asarray(self.next_chars[:amount], dtype="int8")
+        self.total_sentence_count += len(X)
+        np.savez("{}/data_{}.npz".format(self.out_dir, self.cur_output_file), x=X, y=Y)
+        self.sentences = self.sentences[amount:]
+        self.next_chars = self.next_chars[amount:]
+        self.cur_output_file += 1
+
+    def dump_sentences(self):
+        """
+        dump each batch of sentences once reach the line_batchsize
+        """
+        while len(self.sentences) >= self.sentences_per_file:
+            self.__dump(self.sentences_per_file)
+
+    def run(self):
+        # remove output directory if exists and remake it.
+        if os.path.exists(self.out_dir):
+            shutil.rmtree(self.out_dir)
+        os.mkdir(self.out_dir)
+
+        # Setup
+        self.total_sentence_count = 0
+        self.cur_output_file = 0
+        self.sentences = []
+        self.next_chars = []
+
+        file_length = None
+        i = 0
+        if self.debug:
+            self.bytes_cleaned = 0
+            file_length = os.path.getsize(self.in_filename)
+
+        if self.debug:
+            sys.stdout.write(self.get_p_bar(0, 1))
+        with open(self.in_filename, "r", encoding='UTF-8') as f:
+            for line in map(self.clean_line, f):
+                if self.debug:
+                    if i % 400 == 0:
+                        sys.stdout.write(self.get_p_bar(self.bytes_cleaned, file_length))
+                        sys.stdout.flush()
+                    i += 1
+                for j in range(0, len(line) - MAXLEN, STEP):
+                    self.sentences.append(line[j: j + MAXLEN])
+                    self.next_chars.append(line[j + MAXLEN])
+                self.dump_sentences()
+            self.__dump(len(self.sentences))
+        with open("{}/data_count".format(self.out_dir), "w") as f:
+            f.write(str(self.total_sentence_count))
+        if self.debug:
+            sys.stdout.write(self.get_p_bar(file_length, file_length))
 
 
 def main():
-    print("Reading tweet file...")
-    # read in the file
-    text = read_file(FILENAME)
-    print('corpus length:', len(text), flush=True)
-    # print(text)
-    print('total chars:', len(chars))
-
-    # preprocess the text in semi-redundant sequences of maxlen characters
-    sentences = []
-    next_chars = []
-    for i in range(0, len(text) - MAXLEN, STEP):
-        sentences.append(text[i: i + MAXLEN])
-        next_chars.append(text[i + MAXLEN])
-
-    print('nb sequences:', len(sentences))
-    # print("normal sentences:")
-    # print(sentences)
-    sentences = np.asarray(sentences, dtype='int8')
-    next_chars = np.asarray(next_chars, dtype='int8')
-    # print("np sentences:")
-    # print(sentences)
-    # print(next_chars)
-
-    print("saving...")
-    np.savez(NPFILE, x=sentences, y=next_chars)
-    # npzfile = np.load(NPFILE)
-    #
-    # sentences = npzfile['x']
-    # next_chars = npzfile['y']
-    #
-    # print("after loading")
-    # print(sentences)
-    # print(next_chars)
+    # the training corpus
+    in_filename = sys.argv[1]
+    # the output directory name
+    out_dir = sys.argv[2]
+    # 2**20 is the line_batchsize (process 2**20 lines at a time and save to an npz file)
+    SentencePreProcessor(in_filename, out_dir, 2**20, debug=True).run()
 
 if __name__ == '__main__':
     main()

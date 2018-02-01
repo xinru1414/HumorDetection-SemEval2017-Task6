@@ -1,0 +1,1 @@
+This directory contains evaluation scripts released by the task and also two src files for getting results ready for the evaluation.
