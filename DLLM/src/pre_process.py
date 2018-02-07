@@ -1,3 +1,24 @@
+'''
+Feb 2018
+Deep Learning method for Humor Detection
+Xinru Yan
+
+This program pre processes the training data. It takes a file as input,
+reads 2**20 lines at a time (line_batchsize), pre process it and puts the pre_processed data into an npz file (e.g. data_0.npz).
+In the end it outputs a folder including all the npz files and a file including how many sequences it pre_processed in total
+
+line_batchsize can be changed in the main() function
+
+Pre process prepares the data into X and Y (inputs and outputs) pairs:
+X: training data input (a fixed length of chars)
+Y: training data predict output (the next char)
+
+Usage:
+    python3 pre_process.py INPUT_FILE OUTPUT_FOLDER
+    e.g.:
+    python3 ../../NgramLM/mydata/plain.txt ../mydata/npz_files/tweets
+
+'''
 import numpy as np
 import sys
 import os
@@ -44,7 +65,7 @@ class SentencePreProcessor(object):
 
     def clean_line(self, line):
         """
-        clean each line of input file
+        clean each line of input file (string to int convert, padding, lowercase, tweet clean)
         :param line: line in the input file
         :return: cleaned version of line
         """
@@ -99,6 +120,7 @@ class SentencePreProcessor(object):
                         sys.stdout.write(self.get_p_bar(self.bytes_cleaned, file_length))
                         sys.stdout.flush()
                     i += 1
+                # fixed length of sequence: MAXLEN, jump STEP each time
                 for j in range(0, len(line) - MAXLEN, STEP):
                     self.sentences.append(line[j: j + MAXLEN])
                     self.next_chars.append(line[j + MAXLEN])

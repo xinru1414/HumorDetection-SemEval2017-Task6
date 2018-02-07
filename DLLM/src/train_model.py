@@ -1,11 +1,25 @@
+'''
+Feb 2018
+Deep Learning method for Humor Detection
+Xinru Yan
 
+This program trains the char-based LSTM language model
+
+Note that it uses fit_generator to avoid loading the entire dataset at once
+since one of the training dataset is relatively large
+
+Usage:
+    python3 train_model.py TRAINING_DATA_INPUT_FOLDER BATCH_SIZE EPOCH_NUMBER SAVED_MODEL_NAME
+    e.g.:
+    python3 train_model.py ../mydata/npz_files/tweets 128 20 ../mydata/models/model_tweets_new.h5
+'''
 from __future__ import print_function, division
 from keras.models import Sequential
 from keras.layers import Dense, Activation
 from keras.optimizers import RMSprop
 from keras.layers import LSTM, Embedding, Dropout
 from keras.utils import to_categorical
-from nltk.tokenize import TweetTokenizer
+from keras.callbacks import ModelCheckpoint
 import numpy as np
 import click
 import sys
@@ -29,7 +43,7 @@ from config import *
 # next_chars = npzfile['y']
 # print("nb sequences", len(sentences))
 
-# build the model: a single LSTM
+# model setup
 def build_model(maxlen=MAXLEN, lstm_batch_size=LSTM_BATCH_SIZE, char_count=CHAR_COUNT):
     model = Sequential()
     model.add(Embedding(char_count, 128, input_length=maxlen))
@@ -41,6 +55,7 @@ def build_model(maxlen=MAXLEN, lstm_batch_size=LSTM_BATCH_SIZE, char_count=CHAR_
 
     optimizer = RMSprop(lr=0.01)
     model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+
 
     return model
 
@@ -92,9 +107,6 @@ class DataLoader(object):
             if self.get_more_sentences() == 0:
                 break
 
-        # if len(self.sentence_buffer) == 0:
-        #     raise StopIteration()
-
         batch_sentences = self.sentence_buffer[:self.batch_size]
         batch_next_chars = self.next_char_buffer[:self.batch_size]
         self.sentence_buffer = self.sentence_buffer[self.batch_size:]
@@ -132,10 +144,16 @@ def main():
     data = DataLoader(np_dir, batch_size, MAXLEN)
 
     model = build_model()
-    model.fit_generator(data, steps_per_epoch=len(data), epochs=epochs)
+
+    # checkpoint
+    filepath = model_name
+    checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+    callbacks_list = [checkpoint]
+
+    model.fit_generator(data, steps_per_epoch=len(data), epochs=epochs, callbacks=callbacks_list)
 
     # save the model to file
-    model.save(model_name)
+    #model.save(model_name)
 
 if __name__ == '__main__':
     main()
