@@ -57,7 +57,7 @@ for filename in listdir_nohidden(root_path):
 		if system == 'Ngram':
 			outfile = outfile.replace("lm_score", "A_lm")
 		else:
-			outfile = outfile.replace("results_tweets_new", "A_lm")
+			outfile = outfile.replace("results_tweets", "A_lm")
 	with open(fullpath,'r') as tsvin:
 		tsvin = csv.reader(tsvin, delimiter='\t')
 		# sort the tweet based on the LM score they get
