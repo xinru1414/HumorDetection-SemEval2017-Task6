@@ -1,1 +1,6 @@
-Ngram/mydata/*11*
+NgramLM/mydata/lower_11_bi.arpa
+NgramLM/mydata/simple2.txt
+NgramLM/mydata/11_bi.arpa 
+NgramLM/mydata/11_tri.arpa
+NgramLM/mydata/lower_11.txt
+NgramLM/mydata/lower_11_tri.arpa
