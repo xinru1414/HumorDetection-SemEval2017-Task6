@@ -61,7 +61,7 @@ for filename in listdir_nohidden(root_path):
 		if system == 'Ngram':
 			outfile = outfile.replace("lm_score", "B_lm")
 		else:
-			outfile = outfile.replace("results_tweets_new", "B_lm")
+			outfile = outfile.replace("evaluation_results_news", "B_lm")
 	# print(outfile)
 	# read in file l
 	with open(fullpath,'r') as tsvin:

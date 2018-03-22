@@ -56,9 +56,10 @@ data = sys.argv[3]
 #LM = "mydata/text.arpa"
 # text_un.arpa for news data
 if data == "tweets":
-	LM = "mydata/text.arpa"
+	LM = os.path.split(os.path.abspath(__file__))[0] + "/../mydata/text.arpa"
 else:
-	LM = "mydata/text_un.arpa"
+	#LM = "mydata/text_un.arpa"
+	LM = os.path.split(os.path.abspath(__file__))[0] + "/../mydata/simple.arpa"
 
 model = kenlm.Model(LM)
 
