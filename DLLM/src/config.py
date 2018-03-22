@@ -4,7 +4,7 @@ Deep Learning method for Humor Detection
 Xinru Yan
 
 This file includes the set up for the deep learning model
-and commone methods used for the project
+and common methods used for the project
 '''
 
 import string
@@ -17,6 +17,7 @@ STEP = 3
 chars = list(string.ascii_lowercase+string.digits+string.punctuation)+[UNK_TOKEN, SPACE, START_TOKEN]
 CHAR_COUNT = len(chars)
 MAXLEN = 40
+# number of LSTM Units
 LSTM_BATCH_SIZE = 128
 char_indices = dict((c, i) for i, c in enumerate(chars))
 
