@@ -49,17 +49,18 @@ root_path = sys.argv[1]
 # output file path. Change the path to your own path
 result_path = sys.argv[2]
 # set up news data or tweets data
-data = sys.argv[3]
+#data = sys.argv[3]
+LM = sys.argv[3]
 
 # load the Language Model trained on the trainig data. 
 # text.arpa for funny tweets 
 #LM = "mydata/text.arpa"
 # text_un.arpa for news data
-if data == "tweets":
-	LM = os.path.split(os.path.abspath(__file__))[0] + "/../mydata/text.arpa"
-else:
-	#LM = "mydata/text_un.arpa"
-	LM = os.path.split(os.path.abspath(__file__))[0] + "/../mydata/simple.arpa"
+# if data == "tweets":
+# 	LM = os.path.split(os.path.abspath(__file__))[0] + "/../mydata/text.arpa"
+# else:
+# 	#LM = "mydata/text_un.arpa"
+# 	LM = os.path.split(os.path.abspath(__file__))[0] + "/../mydata/simple.arpa"
 
 model = kenlm.Model(LM)
 
