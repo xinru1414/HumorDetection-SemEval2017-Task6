@@ -17,15 +17,21 @@ from __future__ import print_function, division
 from keras.models import Sequential
 from keras.layers import Dense, Activation
 from keras.optimizers import RMSprop
-from keras.layers import LSTM, Embedding, Dropout
+from keras.layers import LSTM, Embedding, Dropout, Conv1D, MaxPooling1D
 from keras.utils import to_categorical
 from keras.callbacks import ModelCheckpoint
+import keras.backend as K
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 import numpy as np
-import click
+#import click
 import sys
 import os
 from math import ceil
 from config import *
+
 
 # # load the pre_processed numpy file
 # NPFILE = sys.argv[1]
@@ -43,18 +49,33 @@ from config import *
 # next_chars = npzfile['y']
 # print("nb sequences", len(sentences))
 
+# def perplexity(y_true, y_pred):
+#     cross_entropy = K.categorical_crossentropy(y_true, y_pred)
+#     perplexity = K.pow(2.0, K.mean(-K.log2(y_pred)))
+#     return perplexity
+#
+def cross_entropy(y_true, y_pred):
+    cross_entropy = K.categorical_crossentropy(y_true, y_pred)
+    # perplexity = K.pow(2.0, cross_entropy)
+    return cross_entropy
+
 # model setup
-def build_model(maxlen=MAXLEN, lstm_batch_size=LSTM_BATCH_SIZE, char_count=CHAR_COUNT):
+def build_model(maxlen=MAXLEN, lstm_batch_size=LSTM_BATCH_SIZE, char_count=CHAR_COUNT, em=EM, lr=LR):
     model = Sequential()
-    model.add(Embedding(char_count, 128, input_length=maxlen))
+    model.add(Embedding(char_count, em, input_length=maxlen))
     # model.add(LSTM(LSTM_BATCH_SIZE, input_shape=(MAXLEN, CHAR_COUNT)))
+    #model.add(Dropout(0.5))
+    #model.add(Conv1D(filters=128, kernel_size=5, activation='relu', padding='valid'))
+    #model.add(MaxPooling1D(pool_size=5))
+    #model.add(LSTM(lstm_batch_size, return_sequences=True))
     model.add(LSTM(lstm_batch_size))
-    model.add(Dropout(0.5))
+    #model.add(Dropout(0.3))
     model.add(Dense(CHAR_COUNT, activation="softmax"))
+    #model.add(Dropout(0.5))
     # model.add(Activation('softmax'))
 
-    optimizer = RMSprop(lr=0.01)
-    model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+    optimizer = RMSprop(lr=LR)
+    model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['categorical_crossentropy'])
 
 
     return model
@@ -85,7 +106,8 @@ class DataLoader(object):
     def __next__(self):
         return self.next()
 
-    def __len__(self):
+    @property
+    def steps_per_epoch(self):
         return int(ceil(self.sentence_count/self.batch_size))
 
     def get_more_sentences(self):
@@ -139,19 +161,47 @@ def main():
     np_dir = sys.argv[1]
     batch_size = int(sys.argv[2])
     epochs = int(sys.argv[3])
-    model_name = (sys.argv[4])
+    model_name = sys.argv[4]
+    pic_name = sys.argv[5]
 
-    data = DataLoader(np_dir, batch_size, MAXLEN)
+    train_data = DataLoader(np_dir+"/train", batch_size, MAXLEN)
+    val_data = DataLoader(np_dir+"/val", batch_size, MAXLEN)
 
     model = build_model()
 
     # checkpoint
     filepath = model_name
-    checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+    checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
+
     callbacks_list = [checkpoint]
 
-    model.fit_generator(data, steps_per_epoch=len(data), epochs=epochs, callbacks=callbacks_list)
-
+    print(model.summary())
+    #model.fit_generator(train_data, steps_per_epoch=train_data.steps_per_epoch, epochs=epochs, callbacks=callbacks_list, workers=10, use_multiprocessing=True, verbose=1, validation_data=val_data, validation_steps=val_data.steps_per_epoch)
+    #model.fit_generator(data, steps_per_epoch=data.steps_per_epoch, epochs=epochs, callbacks=callbacks_list)
+    history = model.fit_generator(train_data, steps_per_epoch=train_data.steps_per_epoch, epochs=epochs, callbacks=callbacks_list,
+                        workers=10, verbose=1, validation_data=val_data,
+                        validation_steps=val_data.steps_per_epoch)
+    # list all data in history
+    print(history.history.keys())
+    # summarize history for cross_en
+    ax = plt.figure().gca()
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+    plt.plot(history.history['cross_entropy'])
+    plt.plot(history.history['val_cross_entropy'])
+    plt.title('model crossentropy')
+    plt.ylabel('crossentropy')
+    plt.xlabel('epoch')
+    plt.legend(['train', 'val'], loc='upper left')
+    plt.savefig(pic_name)
+    # summarize history for loss
+    # plt.plot(history.history['perplexity'])
+    # plt.plot(history.history['val_perplexity'])
+    # plt.title('LM perplexity')
+    # plt.ylabel('perplexity')
+    # plt.xlabel('epoch')
+    # plt.legend(['train', 'val'], loc='upper left')
+    # # plt.show()
+    # plt.savefig('perplexity.png')
     # save the model to file
     #model.save(model_name)
 
