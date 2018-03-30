@@ -8,6 +8,8 @@ name = "pypi"
 [packages]
 
 "7d08736" = {file = "https://github.com/kpu/kenlm/archive/master.zip"}
+preprocessor = "*"
+tweet-preprocessor = "*"
 
 
 [requires]

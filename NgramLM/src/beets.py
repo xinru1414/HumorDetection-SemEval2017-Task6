@@ -8,7 +8,7 @@
 
 # Language: Python 2.7
 # Command line example:
-#	python src/beets.py data/evaluation_dir/evaluation_data/ mydata/lm_train_result/lm_score/ news
+#	python src/beets.py data/evaluation_dir/evaluation_data/ mydata/lm_train_result/lm_score/ text.arpa
 # Outputfile example: #BadInventions.tsv 
 # Format: tweet_id		tweet        												language model score
 #	651794322560581632	Battery Operated Wet Dream Goggles #BadInventions @midnight	-27.781261444091797
@@ -32,6 +32,7 @@
 
 ##### Program starts here #####
 import sys, os
+import preprocessor as p
 # the kenlm languge model
 import kenlm
 import csv
@@ -48,8 +49,7 @@ def listdir_nohidden(path):
 root_path = sys.argv[1]
 # output file path. Change the path to your own path
 result_path = sys.argv[2]
-# set up news data or tweets data
-#data = sys.argv[3]
+# set up language model (arpar file)
 LM = sys.argv[3]
 
 # load the Language Model trained on the trainig data. 
@@ -80,6 +80,7 @@ for filename in listdir_nohidden(root_path):
 			for row in tsvin:
 				# raw tweet (without urls)
 				rt = re.sub(r'https?:\/\/.*', '', str(row[1]), flags=re.MULTILINE)
+				#rt = p.clean(str(row[1]))
 				#rt = re.sub(r'\s?@\w+\s?', '', rt, flags=re.MULTILINE)
 				#rt = re.sub(r'\s?#\w+\s?', '', rt, flags=re.MULTILINE)
 				# lowercase

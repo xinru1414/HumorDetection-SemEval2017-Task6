@@ -65,13 +65,14 @@ class SentencePreProcessor(object):
 
     def clean_line(self, line):
         """
-        clean each line of input file (string to int convert, padding, lowercase, tweet clean)
+        clean each line of input file (string to int convert, padding, lowercase)
         :param line: line in the input file
         :return: cleaned version of line
         """
         if self.debug:
             self.bytes_cleaned += len(line)
-        return text2ints(pad(p.clean(line.lower()).replace("\n", " ")))
+        #return text2ints(pad(p.clean(line.lower()).replace("\n", " ")))
+        return text2ints(pad(line.lower()).replace("\n", " "))
 
     def __dump(self, amount):
         """
