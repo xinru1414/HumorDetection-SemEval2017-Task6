@@ -6,7 +6,12 @@ Vocab size: 71
 
 Number of LSTM units: 128
 
+Number of Embedding units: 10
+
 Input sequence length: 40 
+
+Learning rate: 0.001
+
 ## pre_process.py
 preprocess training data
 ## train_model.py

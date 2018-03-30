@@ -11,7 +11,7 @@ Usage:
     python3 score.py ../../data/evaluation_dir/evaluation_data ../mydata/evaluation_results_tweets_new ../mydata/models/model_tweets_new.h5
 """
 import sys, os
-import csv
+import csv, re
 from keras.models import load_model
 import numpy as np
 import preprocessor as p
@@ -82,7 +82,8 @@ def main():
                 writer = csv.writer(tsvout, delimiter='\t')
                 for row in tsvin:
                     # pre_process tweets
-                    rt = p.clean(str(row[1]).lower())
+                    #rt = p.clean(str(row[1]).lower())
+                    rt = re.sub(r'https?:\/\/.*', '', str(row[1]), flags=re.MULTILINE)
                     rt = text2ints(pad(rt))
                     # score based on the language model for each tweet
                     #writer.writerow([row[0], row[1], get_prob(get_sentence_prob(model, rt)), get_sentence_prob(model, rt)])
