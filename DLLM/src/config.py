@@ -49,17 +49,17 @@ char_indices = dict((c, i) for i, c in enumerate(chars))
 
 def pad(tweet, start_token=START_TOKEN):
     """
-    helper function to pad the training and testing data 
+    helper function to pad the training and testing data so that we can get the probabilities for the start of the sentence
     for each line of input:
         if it has less than or equal to MAX length of chars, pad it with start_token at the beginning so it's MAX+1 length
         else pad it with the one start_token at the beginning
     this steps make sure that sentences are seperated by at start_token and we can get the probabilities for the start of the sentence
     """
-    if len(tweet) <= MAXLEN:
-        return (start_token*(MAXLEN-len(tweet)+1)) + tweet
-    else:
-        return start_token+tweet
-    #return (start_token*MAXLEN) + tweet
+    # if len(tweet) <= MAXLEN:
+    #     return (start_token*(MAXLEN-len(tweet)+1)) + tweet
+    # else:
+    #     return start_token+tweet
+    return (start_token*MAXLEN) + tweet
 
 def text2ints(text):
     """
