@@ -86,5 +86,5 @@ for filename in listdir_nohidden(root_path):
 				# lowercase
 				#rt = rt.lower()
 				# score based on the language model for each tweet
-				writer.writerow([row[0], row[1], model.score(rt, bos = False, eos = False)])
+				writer.writerow([row[0], row[1], model.score(rt, bos = True, eos = True)])
 ##### Program ends here #####

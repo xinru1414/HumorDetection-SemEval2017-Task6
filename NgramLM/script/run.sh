@@ -34,9 +34,3 @@ python ../../Evaluation/cilantro_a.py ../mydata/lm_news_result/lm_score/ news Ng
 python ../../Evaluation/TaskA_Eval/TaskA_Eval_Script.py ../../NgramLM/mydata/lm_news_result/A_lm ../../data/gold_data
 python ../../Evaluation/cilantro_b.py ../mydata/lm_news_result/lm_score/ news Ngram
 python ../../Evaluation/TaskB_Eval/TaskB_Eval_Script.py ../../NgramLM/mydata/lm_news_result/B_lm ../../data/gold_data
-echo '6GB'
-pipenv run python ../src/beets.py ../../data/evaluation_dir/evaluation_data/ ../mydata/lm_news_result/lm_score/ ../mydata/6.arpa
-python ../../Evaluation/cilantro_a.py ../mydata/lm_news_result/lm_score/ news Ngram
-python ../../Evaluation/TaskA_Eval/TaskA_Eval_Script.py ../../NgramLM/mydata/lm_news_result/A_lm ../../data/gold_data
-python ../../Evaluation/cilantro_b.py ../mydata/lm_news_result/lm_score/ news Ngram
-python ../../Evaluation/TaskB_Eval/TaskB_Eval_Script.py ../../NgramLM/mydata/lm_news_result/B_lm ../../data/gold_data
