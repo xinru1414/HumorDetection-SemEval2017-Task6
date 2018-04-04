@@ -80,6 +80,7 @@ for filename in listdir_nohidden(root_path):
 			for row in tsvin:
 				# raw tweet (without urls)
 				rt = re.sub(r'https?:\/\/.*', '', str(row[1]), flags=re.MULTILINE)
+				rt = rt.lower()
 				#rt = p.clean(str(row[1]))
 				#rt = re.sub(r'\s?@\w+\s?', '', rt, flags=re.MULTILINE)
 				#rt = re.sub(r'\s?#\w+\s?', '', rt, flags=re.MULTILINE)
