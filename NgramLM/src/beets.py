@@ -1,14 +1,14 @@
 # SemEval 2017 Task 6 "#HashtagWars: Learning a sense of humor"
-# Jan 2017
+# Jan 2017, updated on April 2018
 # Author: Xinru Yan University of Minnesota Duluth yanxx418@d.umn.edu
 
 # Overview
-# This program reads in the hashtag files, generates a score for each tweet and outputs a tsv file contianing the tweet_id, tweet and the score for each hashtag file.
+# This program reads in the pre processed hashtag files, generates a score for each tweet and outputs a tsv file contianing the tweet_id, tweet and the score for each hashtag file.
 # 
 
 # Language: Python 2.7
 # Command line example:
-#	python src/beets.py data/evaluation_dir/evaluation_data/ mydata/lm_train_result/lm_score/ text.arpa
+#	python src/beets.py data/evaluation_dir/evaluation_data_pre mydata/lm_train_result/lm_score/ text.arpa
 # Outputfile example: #BadInventions.tsv 
 # Format: tweet_id		tweet        												language model score
 #	651794322560581632	Battery Operated Wet Dream Goggles #BadInventions @midnight	-27.781261444091797
@@ -32,7 +32,6 @@
 
 ##### Program starts here #####
 import sys, os
-import preprocessor as p
 # the kenlm languge model
 import kenlm
 import csv
@@ -78,14 +77,6 @@ for filename in listdir_nohidden(root_path):
 		with open(outfile, 'w') as tsvout:
 			writer = csv.writer(tsvout, delimiter='\t')
 			for row in tsvin:
-				# raw tweet (without urls)
-				rt = re.sub(r'https?:\/\/.*', '', str(row[1]), flags=re.MULTILINE)
-				rt = rt.lower()
-				#rt = p.clean(str(row[1]))
-				#rt = re.sub(r'\s?@\w+\s?', '', rt, flags=re.MULTILINE)
-				#rt = re.sub(r'\s?#\w+\s?', '', rt, flags=re.MULTILINE)
-				# lowercase
-				#rt = rt.lower()
 				# score based on the language model for each tweet
-				writer.writerow([row[0], row[1], model.score(rt, bos = True, eos = True)])
+				writer.writerow([row[0], row[1], model.score(row[1], bos = True, eos = True)])
 ##### Program ends here #####

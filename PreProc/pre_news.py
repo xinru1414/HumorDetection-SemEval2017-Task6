@@ -34,7 +34,6 @@
 # You should have received a copy of the GNU General Public License
 # along with the Duluth system.  If not, see <http://www.gnu.org/licenses/>.
 
-#import preprocessor as p
 import sys, os
 import re
 
@@ -46,7 +45,9 @@ def main():
 		lines = f.readlines()
 	with open(outfile, 'w') as o:
 		for line in lines:
+			# tokenization
 			s = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', line)
+			# lowercase
 			o.write(s.lower())
 
 if __name__ == '__main__':

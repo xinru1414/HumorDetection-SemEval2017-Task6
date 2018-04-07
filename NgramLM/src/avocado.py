@@ -1,14 +1,14 @@
 # SemEval 2017 Task 6 "#HashtagWars: Learning a sense of humor"
-# Jan 2017
+# Jan 2017, updated on April 2018
 # Author: Xinru Yan University of Minnesota Duluth yanxx418@d.umn.edu
 
 # Overview
-# This program reads in all the tweets in the training data which the task provides from train_dir/train_data and outputs a plain text file for later language model to use.
+# This program reads in all the tweets in the pre processed training data and outputs a plain text file for later language model to use.
 # You can find training data here: http://alt.qcri.org/semeval2017/task6/index.php?id=data-and-tools
 
 # Language: Python 2.7
 # Command line example:
-#	python avocado.py lm_train_dir/lm_train_data plain.txt
+#	python avocado.py lm_train_dir/lm_train_data_pre plain.txt
 # Output file: (each tweet is on its own line)
 # 	Rollin' Atkinson #420Celebs @midnight
 #	@midnight Jon Bong Jovi #420celebs
@@ -51,8 +51,5 @@ with open(outfile, 'w') as o:
 			# read in file as csv
 			tsvin = csv.reader(tsvin, delimiter='\t')
 			for row in tsvin:
-				# getting rid of urls in the tweet
-				row = re.sub(r'https?:\/\/.*', '', str(row[1]), flags=re.MULTILINE)
-				#row = row.lower()
-				o.write(row + '\n')
+				o.write(row[1] + '\n')
 ##### Program ends here #####
