@@ -46,9 +46,10 @@ def main():
 	with open(outfile, 'w') as o:
 		for line in lines:
 			# tokenization
-			s = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', line)
+			s = re.sub(r"([\w/'+$\s-]+|[^\w/'+$\s-]+)\s*", r"\1 ", line)
+			s = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', s)
 			# lowercase
-			o.write(s.lower())
+			o.write(s.lower()+'\n')
 
 if __name__ == '__main__':
     main()

@@ -63,6 +63,7 @@ for filename in listdir_nohidden(root_path):
 					# lowercase
 					rt = rt.lower()
 					# tokenization
-					#rt = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', rt)
+					rt = re.sub(r"([\w/'+$\s-]+|[^\w/'+$\s-]+)\s*", r"\1 ", rt)
+					rt = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', rt)
 					writer.writerow([row[0], rt])
 ##### Program ends here #####
