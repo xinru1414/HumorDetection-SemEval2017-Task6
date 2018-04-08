@@ -40,9 +40,7 @@ import re
 #root_path = 'train_dir/train_data'
 root_path = sys.argv[1]
 # outputs all tweets in a plain txt file
-#outfile = 'plain.txt'
 outfile = sys.argv[2]
-
 
 with open(outfile, 'w') as o:
 	for filename in os.listdir(root_path):
