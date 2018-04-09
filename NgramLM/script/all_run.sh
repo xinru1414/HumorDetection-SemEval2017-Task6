@@ -1,6 +1,8 @@
 echo '1000line'
-echo 'PreProcessing data'
+echo 'PreProcessing Training data'
 python3 ../../PreProc/pre_news.py ../../data/news_dir/various_size_news/1000line.txt ../../data/news_dir/various_size_news/new1000line.txt
+echo 'PreProcessing Evaluation data'
+python3 ../../PreProc/pre_tweets.py ../../data/evaluation_dir/evaluation_data ../../data/evaluation_dir/evaluation_data_pre
 echo 'PreProcessing data is done'
 echo 'Now we train languge model'
 ../KenLM/kenlm-master/build/bin/lmplz -o 3 -S 70% < ../../data/news_dir/various_size_news/new1000line.txt > ../mydata/1000line.arpa

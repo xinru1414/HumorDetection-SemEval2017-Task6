@@ -62,7 +62,7 @@ for filename in listdir_nohidden(root_path):
 			outfile = outfile.replace("lm_score", "B_lm")
 		else:
 			outfile = outfile.replace("evaluation_results_news", "B_lm")
-	# print(outfile)
+	# print(outfile)s
 	# read in file l
 	with open(fullpath,'r') as tsvin:
 		tsvin = csv.reader(tsvin, delimiter='\t')

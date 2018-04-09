@@ -63,7 +63,11 @@ for filename in listdir_nohidden(root_path):
 		# sort the tweet based on the LM score they get
 		# reverse = True for funny tweets 
 		# reverse = False for news data
-		sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=True)
+		if data == 'tweets':
+			sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=True)
+		else:
+			sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=False)
+		#sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=False)
 		with open(outfile, 'w') as o:
 			for a, b in itertools.combinations(range(len(sortedlist)), 2):
 				# > for funny tweets
