@@ -68,8 +68,8 @@ for filename in listdir_nohidden(root_path):
 			writer = csv.writer(tsvout, delimiter='\t')
 			for row in tsvin:
 				# score based on the language model for each tweet with normalization
-				writer.writerow([row[0], row[1], model.score(row[1], bos = True, eos = True)/len(row[1].rstrip().split(" "))])
+				#writer.writerow([row[0], row[1], model.score(row[1], bos = True, eos = True)/len(row[1].rstrip().split(" "))])
 				# no normalizaiton
-				#writer.writerow([row[0], row[1], model.score(row[1], bos = True, eos = True)])
+				writer.writerow([row[0], row[1], model.score(row[1], bos = True, eos = True)])
 				#writer.writerow([row[0], row[1], model.perplexity(row[1])])
 ##### Program ends here #####

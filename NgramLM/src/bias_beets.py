@@ -64,6 +64,6 @@ for filename in listdir_nohidden(root_path):
 			writer = csv.writer(tsvout, delimiter='\t')
 			for row in tsvin:
 				# length of the tweet
-				writer.writerow([row[0], row[1], len(row[1])])
+				writer.writerow([row[0], row[1], len(row[1].split())])
 				#writer.writerow([row[0], row[1], model.score(row[1], bos = True, eos = True)])
 ##### Program ends here #####
