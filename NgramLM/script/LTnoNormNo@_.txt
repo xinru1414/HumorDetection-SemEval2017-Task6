@@ -1,0 +1,53 @@
+Trigram News
+Lowercase + Keep # No @ + Tokenization without Norm 
+PreProcessing Evaluation data
+Deutsch
+evaluation accuracy is: 0.651065668203
+evaluation distance is: 0.846219201359
+average f1 score for predicting top 10 tweets: 0.166666666667
+
+
+100K
+evaluation accuracy is: 0.642137096774
+evaluation distance is: 0.877048185459
+average f1 score for predicting top 10 tweets: 0.133333333333
+
+
+1MB
+evaluation accuracy is: 0.642137096774
+evaluation distance is: 0.858113848768
+average f1 score for predicting top 10 tweets: 0.15
+10MB
+evaluation accuracy is: 0.640552995392
+evaluation distance is: 0.858113848768
+average f1 score for predicting top 10 tweets: 0.15
+
+
+25MB
+evaluation accuracy is: 0.620823732719
+evaluation distance is: 0.858113848768
+average f1 score for predicting top 10 tweets: 0.15
+
+
+50MB
+evaluation accuracy is: 0.619383640553
+evaluation distance is: 0.895982522151
+average f1 score for predicting top 10 tweets: 0.116666666667
+
+
+200MB
+evaluation accuracy is: 0.616935483871
+evaluation distance is: 0.858113848768
+average f1 score for predicting top 10 tweets: 0.15
+
+
+500MB
+evaluation accuracy is: 0.624711981567
+evaluation distance is: 0.888578711009
+average f1 score for predicting top 10 tweets: 0.116666666667
+
+
+1GB
+evaluation accuracy is: 0.626872119816
+evaluation distance is: 0.895982522151
+average f1 score for predicting top 10 tweets: 0.116666666667

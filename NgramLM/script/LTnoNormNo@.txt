@@ -1,0 +1,399 @@
+Trigram News
+Lowercase + Keep # + No @ + Tokenization without Norm 
+PreProcessing Evaluation data
+Deutsch
+evaluation accuracy is: 0.651065668203
+evaluation distance is: 0.846219201359
+average f1 score for predicting top 10 tweets: 0.166666666667
+
+
+Copying A files into single dirs
+Results per file for Subtask A
+Bad_Job_In_5_Words
+evaluation accuracy is: 0.590551181102
+Break_Up_In_5_Words
+evaluation accuracy is: 0.930565010211
+Broadway_A_Celeb
+evaluation accuracy is: 0.583502366464
+Cereal_Songs
+evaluation accuracy is: 0.630709426628
+Modern_Shakespeare
+evaluation accuracy is: 0.574241181296
+Ruin_A_Christmas_Movie
+evaluation accuracy is: 0.485448195576
+
+
+Copying B files into single dirs
+Restuls per file for Subtask B
+Bad_Job_In_5_Words
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+Break_Up_In_5_Words
+evaluation distance is: 0.636363636364
+average f1 score for predicting top 10 tweets: 0.4
+Broadway_A_Celeb
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Cereal_Songs
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Modern_Shakespeare
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+Ruin_A_Christmas_Movie
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+
+
+100K
+evaluation accuracy is: 0.642137096774
+evaluation distance is: 0.877048185459
+average f1 score for predicting top 10 tweets: 0.133333333333
+
+
+Copying A files into single dirs
+Results per file for Subtask A
+Bad_Job_In_5_Words
+evaluation accuracy is: 0.557930258718
+Break_Up_In_5_Words
+evaluation accuracy is: 0.902654867257
+Broadway_A_Celeb
+evaluation accuracy is: 0.597701149425
+Cereal_Songs
+evaluation accuracy is: 0.600583090379
+Modern_Shakespeare
+evaluation accuracy is: 0.577522559475
+Ruin_A_Christmas_Movie
+evaluation accuracy is: 0.501746216531
+
+
+Copying B files into single dirs
+Restuls per file for Subtask B
+Bad_Job_In_5_Words
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Break_Up_In_5_Words
+evaluation distance is: 0.727272727273
+average f1 score for predicting top 10 tweets: 0.3
+Broadway_A_Celeb
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Cereal_Songs
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Modern_Shakespeare
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+Ruin_A_Christmas_Movie
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+
+
+1MB
+evaluation accuracy is: 0.642137096774
+evaluation distance is: 0.858113848768
+average f1 score for predicting top 10 tweets: 0.15
+
+
+Copying A files into single dirs
+Results per file for Subtask A
+Bad_Job_In_5_Words
+evaluation accuracy is: 0.512935883015
+Break_Up_In_5_Words
+evaluation accuracy is: 0.911504424779
+Broadway_A_Celeb
+evaluation accuracy is: 0.597701149425
+Cereal_Songs
+evaluation accuracy is: 0.605442176871
+Modern_Shakespeare
+evaluation accuracy is: 0.597210828548
+Ruin_A_Christmas_Movie
+evaluation accuracy is: 0.499417927823
+
+
+Copying B files into single dirs
+Restuls per file for Subtask B
+Bad_Job_In_5_Words
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Break_Up_In_5_Words
+evaluation distance is: 0.636363636364
+average f1 score for predicting top 10 tweets: 0.4
+Broadway_A_Celeb
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Cereal_Songs
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Modern_Shakespeare
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+Ruin_A_Christmas_Movie
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+
+
+10MB
+evaluation accuracy is: 0.640552995392
+evaluation distance is: 0.858113848768
+average f1 score for predicting top 10 tweets: 0.15
+
+
+Copying A files into single dirs
+Results per file for Subtask A
+Bad_Job_In_5_Words
+evaluation accuracy is: 0.479190101237
+Break_Up_In_5_Words
+evaluation accuracy is: 0.920353982301
+Broadway_A_Celeb
+evaluation accuracy is: 0.609871534821
+Cereal_Songs
+evaluation accuracy is: 0.5879494655
+Modern_Shakespeare
+evaluation accuracy is: 0.615258408532
+Ruin_A_Christmas_Movie
+evaluation accuracy is: 0.480791618161
+
+
+Copying B files into single dirs
+Restuls per file for Subtask B
+Bad_Job_In_5_Words
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Break_Up_In_5_Words
+evaluation distance is: 0.636363636364
+average f1 score for predicting top 10 tweets: 0.4
+Broadway_A_Celeb
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Cereal_Songs
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Modern_Shakespeare
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+Ruin_A_Christmas_Movie
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+
+
+25MB
+evaluation accuracy is: 0.620823732719
+evaluation distance is: 0.858113848768
+average f1 score for predicting top 10 tweets: 0.15
+
+
+Copying A files into single dirs
+Results per file for Subtask A
+Bad_Job_In_5_Words
+evaluation accuracy is: 0.412823397075
+Break_Up_In_5_Words
+evaluation accuracy is: 0.923757658271
+Broadway_A_Celeb
+evaluation accuracy is: 0.528735632184
+Cereal_Songs
+evaluation accuracy is: 0.602526724976
+Modern_Shakespeare
+evaluation accuracy is: 0.623461853979
+Ruin_A_Christmas_Movie
+evaluation accuracy is: 0.494761350407
+
+
+Copying B files into single dirs
+Restuls per file for Subtask B
+Bad_Job_In_5_Words
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Break_Up_In_5_Words
+evaluation distance is: 0.636363636364
+average f1 score for predicting top 10 tweets: 0.4
+Broadway_A_Celeb
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Cereal_Songs
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Modern_Shakespeare
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+Ruin_A_Christmas_Movie
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+
+
+50MB
+evaluation accuracy is: 0.619383640553
+evaluation distance is: 0.895982522151
+average f1 score for predicting top 10 tweets: 0.116666666667
+
+
+Copying A files into single dirs
+Results per file for Subtask A
+Bad_Job_In_5_Words
+evaluation accuracy is: 0.404949381327
+Break_Up_In_5_Words
+evaluation accuracy is: 0.914908100749
+Broadway_A_Celeb
+evaluation accuracy is: 0.538201487492
+Cereal_Songs
+evaluation accuracy is: 0.592808551992
+Modern_Shakespeare
+evaluation accuracy is: 0.624282198523
+Ruin_A_Christmas_Movie
+evaluation accuracy is: 0.500582072177
+
+
+Copying B files into single dirs
+Restuls per file for Subtask B
+Bad_Job_In_5_Words
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Break_Up_In_5_Words
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Broadway_A_Celeb
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Cereal_Songs
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Modern_Shakespeare
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+Ruin_A_Christmas_Movie
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+
+
+200MB
+evaluation accuracy is: 0.616935483871
+evaluation distance is: 0.858113848768
+average f1 score for predicting top 10 tweets: 0.15
+
+
+Copying A files into single dirs
+Results per file for Subtask A
+Bad_Job_In_5_Words
+evaluation accuracy is: 0.433070866142
+Break_Up_In_5_Words
+evaluation accuracy is: 0.923757658271
+Broadway_A_Celeb
+evaluation accuracy is: 0.503042596349
+Cereal_Songs
+evaluation accuracy is: 0.602526724976
+Modern_Shakespeare
+evaluation accuracy is: 0.613617719442
+Ruin_A_Christmas_Movie
+evaluation accuracy is: 0.500582072177
+
+
+Copying B files into single dirs
+Restuls per file for Subtask B
+Bad_Job_In_5_Words
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Break_Up_In_5_Words
+evaluation distance is: 0.636363636364
+average f1 score for predicting top 10 tweets: 0.4
+Broadway_A_Celeb
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Cereal_Songs
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Modern_Shakespeare
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+Ruin_A_Christmas_Movie
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+
+
+500MB
+evaluation accuracy is: 0.624711981567
+evaluation distance is: 0.888578711009
+average f1 score for predicting top 10 tweets: 0.116666666667
+
+
+Copying A files into single dirs
+Results per file for Subtask A
+Bad_Job_In_5_Words
+evaluation accuracy is: 0.482564679415
+Break_Up_In_5_Words
+evaluation accuracy is: 0.933968686181
+Broadway_A_Celeb
+evaluation accuracy is: 0.489519945909
+Cereal_Songs
+evaluation accuracy is: 0.617103984451
+Modern_Shakespeare
+evaluation accuracy is: 0.637407711239
+Ruin_A_Christmas_Movie
+evaluation accuracy is: 0.466821885914
+
+
+Copying B files into single dirs
+Restuls per file for Subtask B
+Bad_Job_In_5_Words
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Break_Up_In_5_Words
+evaluation distance is: 0.727272727273
+average f1 score for predicting top 10 tweets: 0.3
+Broadway_A_Celeb
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Cereal_Songs
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Modern_Shakespeare
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+Ruin_A_Christmas_Movie
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+
+
+1GB
+evaluation accuracy is: 0.626872119816
+evaluation distance is: 0.895982522151
+average f1 score for predicting top 10 tweets: 0.116666666667
+
+
+Copying A files into single dirs
+Results per file for Subtask A
+Bad_Job_In_5_Words
+evaluation accuracy is: 0.498312710911
+Break_Up_In_5_Words
+evaluation accuracy is: 0.929203539823
+Broadway_A_Celeb
+evaluation accuracy is: 0.517917511832
+Cereal_Songs
+evaluation accuracy is: 0.599611273081
+Modern_Shakespeare
+evaluation accuracy is: 0.621821164889
+Ruin_A_Christmas_Movie
+evaluation accuracy is: 0.470314318976
+
+
+Copying B files into single dirs
+Restuls per file for Subtask B
+Bad_Job_In_5_Words
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Break_Up_In_5_Words
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Broadway_A_Celeb
+evaluation distance is: 1.0
+average f1 score for predicting top 10 tweets: 0.0
+Cereal_Songs
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+Modern_Shakespeare
+evaluation distance is: 0.909090909091
+average f1 score for predicting top 10 tweets: 0.1
+Ruin_A_Christmas_Movie
+evaluation distance is: 0.818181818182
+average f1 score for predicting top 10 tweets: 0.2
+
+
