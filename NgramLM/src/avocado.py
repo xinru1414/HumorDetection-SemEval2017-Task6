@@ -45,7 +45,7 @@ outfile = sys.argv[2]
 with open(outfile, 'w') as o:
 	for filename in os.listdir(root_path):
 		fullpath = os.path.join(root_path, filename)
-		with open(fullpath,'r') as tsvin:
+		with open(fullpath,'r', encoding='UTF-8') as tsvin:
 			# read in file as csv
 			tsvin = csv.reader(tsvin, delimiter='\t')
 			for row in tsvin:

@@ -48,10 +48,6 @@ def listdir_nohidden(path):
 root_path = sys.argv[1]
 # output file path. Change the path to your own path
 result_path = sys.argv[2]
-# set up language model (arpar file)
-LM = sys.argv[3]
-
-model = kenlm.Model(LM)
 
 
 # read in the file
@@ -67,9 +63,7 @@ for filename in listdir_nohidden(root_path):
 		with open(outfile, 'w') as tsvout:
 			writer = csv.writer(tsvout, delimiter='\t')
 			for row in tsvin:
-				# score based on the language model for each tweet with normalization
-				writer.writerow([row[0], row[1], model.score(row[1], bos = True, eos = True)/len(row[1].rstrip().split(" "))])
-				# no normalizaiton
+				# length of the tweet
+				writer.writerow([row[0], row[1], len(row[1])])
 				#writer.writerow([row[0], row[1], model.score(row[1], bos = True, eos = True)])
-				#writer.writerow([row[0], row[1], model.perplexity(row[1])])
 ##### Program ends here #####
