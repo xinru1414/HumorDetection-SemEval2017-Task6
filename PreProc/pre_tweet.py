@@ -32,6 +32,7 @@
 import sys, os
 import csv
 import re
+from string import punctuation
 
 # read in all files from train_dir/train_data. Change the path to your own path
 #root_path = 'train_dir/train_data'
@@ -55,15 +56,23 @@ for filename in listdir_nohidden(root_path):
 			writer = csv.writer(tsvout, delimiter='\t')
 			for row in tsvin:
 					# getting rid of urls in the tweet
-					rt = re.sub(r'https?:\/\/.*', '', str(row[1]), flags=re.MULTILINE)
+					rt = re.sub(r'http\S+', '', str(row[1]), flags=re.MULTILINE)
 					# getting rid of tokens started with @ (names)
-					#rt = re.sub(r'\s?@\w+\s?', '', rt, flags=re.MULTILINE)
+					rt = re.sub(r'\s?@\w+\s?', '', rt, flags=re.MULTILINE)
 					# getting rid of tokens started with # (hashtags)
-					#rt = re.sub(r'\s?#\w+\s?', '', rt, flags=re.MULTILINE)
+					rt = re.sub(r'\s?#\w+\s?', '', rt, flags=re.MULTILINE)
+					# remove all punctuations
+					rt = ''.join(c for c in rt if c not in punctuation)
+					# remove leading space
+					rt = rt.lstrip()
+					# remove trailing space
+					rt = rt.rstrip()
 					# lowercase
 					rt = rt.lower()
+					#rt = re.sub(r'#pointsme', '', rt)
 					# tokenization
-					rt = re.sub(r"([\w/'+$\s-]+|[^\w/'+$\s-]+)\s*", r"\1 ", rt)
-					rt = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', rt)
+					#rt = re.sub(r"([\w/'+$\s-]+|[^\w/'+$\s-]+)\s*", r"\1 ", rt)
+					#rt = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', rt)
+					#rt = re.sub(r'\"', '', rt, flags=re.MULTILINE)
 					writer.writerow([row[0], rt])
 ##### Program ends here #####

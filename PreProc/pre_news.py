@@ -36,6 +36,7 @@
 
 import sys, os
 import re
+from string import punctuation
 
 infile = sys.argv[1]
 outfile = sys.argv[2]
@@ -45,11 +46,19 @@ def main():
 		lines = f.readlines()
 	with open(outfile, 'w') as o:
 		for line in lines:
+			# remove all punctuations
+			s = ''.join(c for c in line if c not in punctuation)
+			# remove leading space
+			s = line.lstrip()
+			# remove trailing space
+			s = s.rstrip()
 			# tokenization
-			s = re.sub(r"([\w/'+$\s-]+|[^\w/'+$\s-]+)\s*", r"\1 ", line)
-			s = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', s)
+			#s = re.sub(r"([\w/'+$\s-]+|[^\w/'+$\s-]+)\s*", r"\1 ", line)
+			#s = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', s)
+			#s = re.sub(r'\"', '', s, flags=re.MULTILINE)
 			# lowercase
 			o.write(s.lower()+'\n')
+			#o.write(s+'\n')
 
 if __name__ == '__main__':
     main()
