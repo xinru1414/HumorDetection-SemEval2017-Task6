@@ -1,0 +1,226 @@
+420_Celebs
+evaluation accuracy is: 0.366435719784
+Add_A_Woman_Improve_A_Movie
+evaluation accuracy is: 0.38432483475
+Add_Sports_Ruin_A_Song
+evaluation accuracy is: 0.338983050847
+Add_The_Rock_Improve_Anything
+evaluation accuracy is: 0.538461538462
+American_In_4_Words
+evaluation accuracy is: 0.509040333797
+Autumn_In_3_Words
+evaluation accuracy is: 0.428571428571
+Bad_Inventions
+evaluation accuracy is: 0.495540138751
+Bad_Kickstarter_In_5_Words
+evaluation accuracy is: 0.389277389277
+Bad_Monster_Movies
+evaluation accuracy is: 0.442495126706
+Bad_Movie_Mashups
+evaluation accuracy is: 0.550295857988
+Bad_Sex_In_3_Words
+evaluation accuracy is: 0.49147516679
+Bad_Tramp_Stamps
+evaluation accuracy is: 0.385799828914
+Basketball_Movies
+evaluation accuracy is: 0.312779267203
+Before_Facebook_I
+evaluation accuracy is: 0.401673640167
+Before_You_Tube
+evaluation accuracy is: 0.436974789916
+Best_Weekend_In_5_Words
+evaluation accuracy is: 0.458661417323
+Better_Debate_Questions
+evaluation accuracy is: 0.460750853242
+Better_Halftime_Shows
+evaluation accuracy is: 0.40157480315
+Boring_Blockbusters
+evaluation accuracy is: 0.473292765382
+Canadian_Superheroes
+evaluation accuracy is: 0.516300227445
+Cat_Books  
+evaluation accuracy is: 0.450760608487
+Cat_History
+evaluation accuracy is: 0.353711790393
+Celebri_Trees
+evaluation accuracy is: 0.383367139959
+College_Celebs
+evaluation accuracy is: 0.53151397011
+Comic_Book_Songs
+evaluation accuracy is: 0.650551314673
+Comic_Book_TV_Shows
+evaluation accuracy is: 0.454222853087
+Crapper_Books
+evaluation accuracy is: 0.318046456224
+Dad_Songs   
+evaluation accuracy is: 0.490959666203
+Dog_Books  
+evaluation accuracy is: 0.529758011772
+Dog_Jobs    
+evaluation accuracy is: 0.619499568594
+Drunk_Books
+evaluation accuracy is: 0.578611898017
+Drunk_Carols
+evaluation accuracy is: 0.470246734398
+Elderly_Movies
+evaluation accuracy is: 0.630844954881
+Elderly_Sci_Fi
+evaluation accuracy is: 0.35583796664
+Fantasy_Songs
+evaluation accuracy is: 0.435154707044
+Fast_Food_Books
+evaluation accuracy is: 0.367866549605
+Film_Poops 
+evaluation accuracy is: 0.4201411161
+First_Draft_Cartoons
+evaluation accuracy is: 0.377808032675
+Florida_A_Movie
+evaluation accuracy is: 0.53162530024
+GOP_Movies 
+evaluation accuracy is: 0.663671373556
+GOP_Songs   
+evaluation accuracy is: 0.574297188755
+Gentler_Songs
+evaluation accuracy is: 0.450930083387
+Got_Fired_Because
+evaluation accuracy is: 0.527856468366
+Greet_The_Aliens_In_5_Words
+evaluation accuracy is: 0.539942252166
+Gritty_Seuss
+evaluation accuracy is: 0.368421052632
+Hangover_Songs
+evaluation accuracy is: 0.487881157154
+Hip_Hop_Cartoons
+evaluation accuracy is: 0.56020278834
+Hip_Hop_Star_Wars
+evaluation accuracy is: 0.564789991063
+Historical_TV_Shows
+evaluation accuracy is: 0.43109540636
+Hit_On_Your_Mom
+evaluation accuracy is: 0.546421663443
+Holiday_Celebs
+evaluation accuracy is: 0.279007971656
+Hungry_Games
+evaluation accuracy is: 0.543738200126
+I_Love_Bae_But
+evaluation accuracy is: 0.476635514019
+If_I_Were_President
+evaluation accuracy is: 0.401486988848
+If_Trump_Wins
+evaluation accuracy is: 0.666666666667
+Internet_The_Beatles
+evaluation accuracy is: 0.561115082202
+Internet_The_Past
+evaluation accuracy is: 0.483930211203
+Lesser_Known_Holidays
+evaluation accuracy is: 0.495765973826
+Make_A_Movie_Sick
+evaluation accuracy is: 0.337987201862
+Make_A_Quote_Dirty
+evaluation accuracy is: 0.507384882711
+Make_A_Song_Whiter
+evaluation accuracy is: 0.455081001473
+Make_Baseball_Exciting
+evaluation accuracy is: 0.483196415235
+Make_TV_Shows_Evil
+evaluation accuracy is: 0.731092436975
+Marriage_Advice_In_3_Words
+evaluation accuracy is: 0.371428571429
+Mom_Songs  
+evaluation accuracy is: 0.583436341162
+My_Family_In_4_Words
+evaluation accuracy is: 0.411529223379
+My_Summer_Plans
+evaluation accuracy is: 0.624528301887
+NSFW_Shows 
+evaluation accuracy is: 0.477799867462
+Nerd_Broadway
+evaluation accuracy is: 0.486029889539
+New_Muppet_Plotlines
+evaluation accuracy is: 0.6276849642
+New_NFL_Teams
+evaluation accuracy is: 0.375568551007
+New_Space_Facts
+evaluation accuracy is: 0.525323910483
+Ocean_Celebs
+evaluation accuracy is: 0.583273766976
+Ocean_Movies
+evaluation accuracy is: 0.414975507348
+One_Letter_Off_Foods
+evaluation accuracy is: 0.408195429472
+One_Letter_Off_Movies
+evaluation accuracy is: 0.523064894449
+One_Letter_Off_Songs
+evaluation accuracy is: 0.406332453826
+Opposite_Day
+evaluation accuracy is: 0.555555555556
+Pizzalebrities
+evaluation accuracy is: 0.444889779559
+Political_Superheroes
+evaluation accuracy is: 0.378279438682
+Prison_Books
+evaluation accuracy is: 0.476145930776
+Prom_In_3_Words
+evaluation accuracy is: 0.472620050548
+Realistic_Resolutions
+evaluation accuracy is: 0.548630783758
+Redneck_In_3_Words
+evaluation accuracy is: 0.526220614828
+Redneck_TV_Shows
+evaluation accuracy is: 0.640986132512
+Ruin_A_Kids_Show
+evaluation accuracy is: 0.303899926416
+Ruin_A_Video_Game
+evaluation accuracy is: 0.36519386835
+Ruin_Shakespeare
+evaluation accuracy is: 0.407732864675
+Scary_Story_In_5_Words
+evaluation accuracy is: 0.590339892665
+Science_A_Book
+evaluation accuracy is: 0.53595255745
+Science_Foods
+evaluation accuracy is: 0.588144726713
+Sexy_Holidays
+evaluation accuracy is: 0.496
+Sexy_Snacks
+evaluation accuracy is: 0.457065584855
+Sexy_Star_Wars
+evaluation accuracy is: 0.39552238806
+Siblings_In_5_Words
+evaluation accuracy is: 0.581328200192
+Single_Life_In_3_Words
+evaluation accuracy is: 0.46460537022
+Spooky_Bands
+evaluation accuracy is: 0.444070647603
+Spring_Break_In_4_Words
+evaluation accuracy is: 0.511210762332
+Star_Wars_Songs
+evaluation accuracy is: 0.589840788476
+Stoner_Sci_Fi
+evaluation accuracy is: 0.604581072936
+Thanksgiving_In_5_Words
+evaluation accuracy is: 0.498817966903
+Twitter_In_5_Words
+evaluation accuracy is: 0.448416751788
+Underwear_Songs
+evaluation accuracy is: 0.46101903008
+Update_A_Fairy_Tale
+evaluation accuracy is: 0.381165919283
+Vegas_Movies
+evaluation accuracy is: 0.499609069586
+Visit_Britain_Because
+evaluation accuracy is: 0.431754874652
+
+Evaluation:
+Bad_Job_In_5_Words
+evaluation accuracy is: 0.635545556805
+Break_Up_In_5_Words
+evaluation accuracy is: 0.5568413887
+Broadway_A_Celeb
+evaluation accuracy is: 0.465179175118
+Cereal_Songs
+evaluation accuracy is: 0.450923226433
+Modern_Shakespeare
+evaluation accuracy is: 0.603773584906
+Ruin_A_Christmas_Movie
+evaluation accuracy is: 0.346915017462

@@ -1,0 +1,18 @@
+Trigram Lowercase + No @ + T + Keep #
+PreProcessing Evaluation data
+100K
+evaluation accuracy is: 0.500782200591
+1MB
+evaluation accuracy is: 0.487745524074
+10MB
+evaluation accuracy is: 0.466539196941
+25MB
+evaluation accuracy is: 0.420128628542
+50MB
+evaluation accuracy is: 0.419433339127
+200MB
+evaluation accuracy is: 0.42638623327
+500MB
+evaluation accuracy is: 0.412132800278
+1GB
+evaluation accuracy is: 0.412132800278
