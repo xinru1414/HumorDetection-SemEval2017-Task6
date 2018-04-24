@@ -55,19 +55,18 @@ for filename in listdir_nohidden(root_path):
 		tsvin = csv.reader(tsvin, delimiter='\t')
 		# sort the tweet based on the length of the tweet!
 		# reverse does not matter here
-		sortedlist = sorted(tsvin, key=lambda row: int(row[2]), reverse=True)
+		#sortedlist = sorted(tsvin, key=lambda row: int(row[2]), reverse=True)
+		sortedlist = list(tsvin)
 		with open(outfile, 'w') as o:
 			for a, b in itertools.combinations(range(len(sortedlist)), 2):
 				# always pick the longer tweet as the winning tweet!
 				# if two tweets have the same length, then randomly assign a value 1 or 0
-				if sortedlist[a][2] > sortedlist[b][2]:
-					o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '1' + '\n')
-				elif sortedlist[a][2] == sortedlist[b][2]:
-					o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + str(random.randint(0,1)) + '\n')
+				if int(sortedlist[a][2]) > int(sortedlist[b][2]):
+					o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '0' + '\n')
+				elif int(sortedlist[a][2]) == int(sortedlist[b][2]):
+					o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '0' + '\n')
 				else: 
 					o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '0' + '\n')
-
-
 ##### Program ends here #####
 
 

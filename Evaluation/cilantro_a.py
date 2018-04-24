@@ -63,11 +63,12 @@ for filename in listdir_nohidden(root_path):
 		# sort the tweet based on the LM score they get
 		# reverse = True for funny tweets 
 		# reverse = False for news data
-		if data == 'tweets':
-			sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=True)
-		else:
-			sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=False)
-		#sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=False)
+		# if data == 'tweets':
+		# 	sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=True)
+		# else:
+		# 	#sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=False)
+			#sortedlist = sorted(tsvin, key=lambda row: int(row[2]), reverse=False)
+		sortedlist = sorted(tsvin, key=lambda row: float(row[2]), reverse=False)
 		with open(outfile, 'w') as o:
 			for a, b in itertools.combinations(range(len(sortedlist)), 2):
 				# > for funny tweets
@@ -80,6 +81,8 @@ for filename in listdir_nohidden(root_path):
 				else:
 					if float(sortedlist[a][2]) < float(sortedlist[b][2]):
 						o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '1' + '\n')
+					# elif float(sortedlist[a][2]) == float(sortedlist[b][2]):
+				 # 		o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '0' + '\n')
 					else:
 						o.write(sortedlist[a][0] + '\t' + sortedlist[b][0] + '\t' + '0' + '\n')
 

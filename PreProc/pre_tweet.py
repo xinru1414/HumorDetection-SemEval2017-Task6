@@ -58,11 +58,11 @@ for filename in listdir_nohidden(root_path):
 					# getting rid of urls in the tweet
 					rt = re.sub(r'http\S+', '', str(row[1]), flags=re.MULTILINE)
 					# getting rid of tokens started with @ (names)
-					rt = re.sub(r'\s?@\w+\s?', '', rt, flags=re.MULTILINE)
+					rt = re.sub(r'\s?@\w+\s?', ' ', rt, flags=re.MULTILINE)
 					# getting rid of tokens started with # (hashtags)
-					rt = re.sub(r'\s?#\w+\s?', '', rt, flags=re.MULTILINE)
+					#rt = re.sub(r'\s?#\w+\s?', '', rt, flags=re.MULTILINE)
 					# remove all punctuations
-					rt = ''.join(c for c in rt if c not in punctuation)
+					#rt = ''.join(c for c in rt if c not in punctuation)
 					# remove leading space
 					rt = rt.lstrip()
 					# remove trailing space
@@ -70,9 +70,10 @@ for filename in listdir_nohidden(root_path):
 					# lowercase
 					rt = rt.lower()
 					#rt = re.sub(r'#pointsme', '', rt)
-					# tokenization
-					#rt = re.sub(r"([\w/'+$\s-]+|[^\w/'+$\s-]+)\s*", r"\1 ", rt)
-					#rt = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', rt)
-					#rt = re.sub(r'\"', '', rt, flags=re.MULTILINE)
+					#tokenization
+					rt = re.sub(r"([\w/'+$\s-]+|[^\w/'+$\s-]+)\s*", r"\1 ", rt)
+					rt = re.sub('(?<! )(?=[.,!?()])|(?<=[.,!?()])(?! )', r' ', rt)
+					rt = re.sub(r'\"', '', rt, flags=re.MULTILINE)
+					rt = re.sub(r'# ', '#', rt, flags=re.MULTILINE)
 					writer.writerow([row[0], rt])
 ##### Program ends here #####
