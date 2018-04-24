@@ -8,6 +8,22 @@ python2 ../src/beets.py ../mydata/lm_train_dir/lm_train_data_pre/ ../mydata/lm_n
 python2 ../../Evaluation/cilantro_a.py ../mydata/lm_news_result/lm_score/ news Ngram
 python2 ../../Evaluation/TaskA_Eval/TaskA_Eval_Script.py ../../NgramLM/mydata/lm_news_result/A_lm ../mydata/lm_train_dir/lm_train_data
 
+echo 'Results per file for Subtask A'
+for i in 
+echo 'Bad_Job_In_5_Words'
+python2 ../../Evaluation/TaskA_Eval/TaskA_Eval_Script.py ../../NgramLM/mydata/lm_news_result/A_S/BJ ../../data/BJ
+echo 'Break_Up_In_5_Words'
+python2 ../../Evaluation/TaskA_Eval/TaskA_Eval_Script.py ../../NgramLM/mydata/lm_news_result/A_S/BU ../../data/BU
+echo 'Broadway_A_Celeb'
+python2 ../../Evaluation/TaskA_Eval/TaskA_Eval_Script.py ../../NgramLM/mydata/lm_news_result/A_S/BA ../../data/BA
+echo 'Cereal_Songs'
+python2 ../../Evaluation/TaskA_Eval/TaskA_Eval_Script.py ../../NgramLM/mydata/lm_news_result/A_S/CS ../../data/CS
+echo 'Modern_Shakespeare'
+python2 ../../Evaluation/TaskA_Eval/TaskA_Eval_Script.py ../../NgramLM/mydata/lm_news_result/A_S/MS ../../data/MS
+echo 'Ruin_A_Christmas_Movie'
+python2 ../../Evaluation/TaskA_Eval/TaskA_Eval_Script.py ../../NgramLM/mydata/lm_news_result/A_S/RA ../../data/RA
+echo '\n'
+
 
 
 # echo '1MB'
